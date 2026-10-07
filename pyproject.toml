@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=84"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fsd-decoder"
+version = "0.1.45"
+description = "Bounded provenance-preserving FracSIS/ObjectStore capture and FSDX inspection"
+readme = {text = "Bounded provenance-preserving FracSIS/ObjectStore capture and FSDX inspection. The root README and academic paper at docs/paper/fsd_recovery_paper.md are included; other documentation, tests and maintenance instructions remain local.", content-type = "text/plain"}
+requires-python = ">=3.12,<3.15"
+dependencies = []
+classifiers = [
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+  "Operating System :: POSIX :: Linux",
+]
+
+[project.optional-dependencies]
+tui = ["rich>=14,<15"]
+test = ["hypothesis==6.168.4", "sortedcontainers==2.4.0"]
+
+[project.scripts]
+fsd-encode = "fsd_decoder.cli.encode:main"
+fsd-output = "fsd_decoder.cli.output:main"
+fsd-census = "fsd_decoder.discovery.decoding_coverage:main"
+fsd-relationships = "fsd_decoder.discovery.relationship_discovery:main"
+fsd-packed-points = "fsd_decoder.exports.packed_points:main"
+fsd-corpus = "fsd_decoder.portable.run_corpus:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"fsd_decoder.resources" = ["*.json"]
+"fsd_decoder.core" = ["_json_scan.cpp"]

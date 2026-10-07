@@ -1,0 +1,5 @@
+# Convenience install for the core package and optional Rich terminal interface.
+# Run: python -m pip install -r requirements.txt from this project's root.
+# Dependency versions are defined only in pyproject.toml.
+# Core only: pip install . ; development: pip install '.[tui,test]'.
+.[tui]
