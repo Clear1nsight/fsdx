@@ -5,6 +5,7 @@ NativeDatabase supplies current table entries and an extent-aware address map.
 """
 from __future__ import annotations
 from collections import deque
+from collections.abc import Callable
 from fsd_decoder.schema.directory_types import recover_directory_types
 from fsd_decoder.native.native_tags import parse_tag_payload, TagError
 from fsd_decoder.native.page_free_codec import decode_group
@@ -50,7 +51,7 @@ def build_native_types(data, directory=None, *, allow_partial_representations=Fa
 
 class NativeAllocationReader:
 
-    def __init__(self, database, native_types=None, *, page_preparer=None):
+    def __init__(self, database, native_types=None, *, page_preparer=None, context_encoder: Callable[[dict], bytes] | None = None):
         self.database = database
         if native_types is None:
             self.types, self.type_evidence = build_native_types(database.data, database.directory)
@@ -62,6 +63,9 @@ class NativeAllocationReader:
         # Optional canonical encoding prepared by trusted page workers.
         # It is transient evidence, never a field in the allocation record.
         self.current_encoded_record = None
+        # Optional capture-only encoding; public native iteration stays uncached.
+        self.context_encoder = context_encoder
+        self.current_encoded_context = None
 
     def iter_allocations(self, include_free=False, segments=None):
         db = self.database
@@ -130,6 +134,7 @@ class NativeAllocationReader:
                     if recent.get(old) == signature:
                         del recent[old]
                 provenance = {k: v for k, v in entry.items() if k not in ('payload', 'raw')}
+                self.current_encoded_context = None
                 for record_index, raw_record in enumerate(trace['records']):
                     record = dict(raw_record)
                     offset = page + record['page_offset']
@@ -160,6 +165,10 @@ class NativeAllocationReader:
                     if prepared_page is None:
                         record = materialize_allocation(db, cluster, entry, begin, record, provenance)
                     self.current_encoded_record = prepared_page['encoded_records'][record_index] if prepared_page is not None else None
+                    # Capture owns this iterator: freeze one provenance encoding
+                    # per admitted page, without caching mutable public metadata.
+                    if self.context_encoder is not None and self.current_encoded_context is None:
+                        self.current_encoded_context = self.context_encoder(provenance)
                     self.stats['allocations'] += 1
                     self.stats['huge_allocations'] += huge_key
                     yield record

@@ -2,7 +2,7 @@
 
 A Python tool for recovering data from observed FracSIS/ObjectStore `.fsd`
 layouts and capturing it in a standalone SQLite `.fsdx` archive. Version
-**0.1.45** includes a command-line decoder, archive inspection commands, a
+**0.1.51** includes a command-line decoder, archive inspection commands, a
 separate Rich terminal interface and an optional C++ acceleration helper.
 
 The decoder reads the selected source to discover its schema, storage objects,
@@ -205,9 +205,11 @@ artifacts/cache/venv/bin/fsd-encode ingest/example.fsd \
   --output artifacts/exports/example_workers2.fsdx --workers 2
 ```
 
-Worker preparation is experimental; pointer capture and verification remain
-ordered. Additional workers can increase memory consumption and do not guarantee
-shorter total runtime.
+Worker preparation is experimental. Requested workers also validate BLOBs and
+documents in bounded ranges and hash complete ordered relational tables. Global
+integrity checks and comparisons against the native source remain required.
+Additional workers can increase memory consumption and do not guarantee shorter
+total runtime.
 
 Installation attempts to build the optional C++ helper. To build the helper
 used by the source-checkout interface separately:
@@ -218,7 +220,11 @@ artifacts/cache/venv/bin/python -B tools/build_native.py
 ```
 
 The helper accelerates JSON UTF-8/depth screening, canonical SQL-row framing
-and bounded row-size estimation. Python owns FSD interpretation and integrity
+and bounded row-size estimation. It also frames bounded normalized allocation
+proof records; unsupported values retain Python handling. Parallel preparation
+prefetches up to workers+1 allocation results or workers×2 pointer results,
+within its estimated byte admission budget.
+Python owns FSD interpretation and integrity
 policy. Do not rebuild or reinstall during an active capture. To select the
 Python fallback for a command in a fresh process:
 

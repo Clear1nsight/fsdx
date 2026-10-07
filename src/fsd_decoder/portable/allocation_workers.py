@@ -139,8 +139,9 @@ class AllocationWorkers:
         if not isinstance(database.data, bytes):
             raise InputValidationError('Allocation workers require an immutable bytes snapshot')
         self.batch_pages = batch_pages
-        self.slots = min(workers * 2, pending_bytes // MAX_RESULT_BYTES)
-        self.pending_bytes = self.slots * MAX_RESULT_BYTES
+        self.slots = min(workers + 1, pending_bytes // MAX_RESULT_BYTES)
+        self.pointer_slots = min(workers * 2, pending_bytes // MAX_RESULT_BYTES)
+        self.pending_bytes = max(self.slots, self.pointer_slots) * MAX_RESULT_BYTES
         self.maximum_result_bytes = 0
         self.batches = self.result_bytes = 0
         self.split_batches = self.serial_allocation_pages = 0
@@ -159,25 +160,33 @@ class AllocationWorkers:
                 for start in range(0, len(entries), self.batch_pages))
         for raw in self._results(_prepare_batch, jobs):
             # Only our trusted child creates these responses; never unpickle FSD.
-            for page in pickle.loads(raw):
+            pages = pickle.loads(raw)
+            del raw
+            for index, page in enumerate(pages):
                 if page.get('trace') is not None:
                     page['trace']['records'] = _unpack_records(page['trace']['records'])
+                pages[index] = None
                 yield page
+                del page
+            del pages
 
     def pointer_pages(self, cluster: dict, entries: Iterable[dict]) -> Iterator[dict]:
         """One PRM page per result; same bounded pool, no SQLite in children."""
         jobs = ((cluster, entry) for entry in entries)
         for raw in self._results(_prepare_pointer_result, jobs):
             page = pickle.loads(raw)
+            del raw
             page['records'] = _unpack_records(page['records'])
             yield page
+            del page
 
     def _results(self, function, jobs):
         pending = deque()
+        slots = self.pointer_slots if function is _prepare_pointer_result else self.slots
         jobs, exhausted = iter(jobs), False
         try:
             while not exhausted or pending:
-                while not exhausted and len(pending) < self.slots:
+                while not exhausted and len(pending) < slots:
                     try:
                         arguments = next(jobs)
                     except StopIteration:
@@ -189,15 +198,19 @@ class AllocationWorkers:
                 future, arguments = pending.popleft()
                 try:
                     raw = future.result()
+                    del future
                 except ResourceLimitError:
                     if function is not _prepare_batch:
                         raise
                     for raw in self._smaller_batches(arguments):
                         self._record_result(raw)
                         yield raw
+                        del raw
+                    del future
                 else:
                     self._record_result(raw)
                     yield raw
+                    del raw
         finally:
             for future, _ in pending:
                 future.cancel()

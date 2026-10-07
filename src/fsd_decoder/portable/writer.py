@@ -11,7 +11,7 @@ import os
 from pathlib import Path
 import time
 import uuid
-from .format import Store, StoreError, StoreWriter, DEFAULT_CHUNK_BYTES, encode_json, _bounded_encode_json, MAX_BLOB_BYTES
+from .format import Store, StoreError, StoreWriter, DEFAULT_CHUNK_BYTES, encode_json, _bounded_encode_json, MAX_BLOB_BYTES, _row_batches, _framed_rows
 from fsd_decoder.core.provenance import runtime_identity
 
 def _digest(path):
@@ -25,6 +25,39 @@ def _feed(digest, value):
     raw = encode_json(value)
     digest.update(len(raw).to_bytes(8, 'big'))
     digest.update(raw)
+
+def _feed_records(digest, records):
+    """Preserve canonical proof frames with optional bounded native encoding."""
+    from fsd_decoder.core.json_scan import frame_records
+    raw = frame_records(records) if frame_records is not None else None
+    if raw is not None:
+        digest.update(raw)
+    else:
+        for record in records:
+            _feed(digest, record)
+
+def _allocation_proof_batches(stored):
+    """Bounded borrowed proof records; oversized metadata is hashed alone."""
+    batch, estimate = [], 0
+    cursor = stored.connection.execute(stored._allocation_query() + ' ORDER BY a.id')
+    columns = tuple(column[0] for column in cursor.description)
+    for values in cursor:
+        row = dict(zip(columns, values))
+        if any(row[k] is None for k in ('name', 'template', 'context')):
+            # The canonical restorer provides the established policy diagnostic.
+            stored._allocation_record(row, for_proof=True)
+        bound = 2048 + 6 * (len(row['name']) + len(row['template']) + len(row['context']))
+        if batch and (len(batch) >= 64 or estimate + bound > 1024 * 1024):
+            yield batch
+            batch, estimate = [], 0
+        record = stored._allocation_record(row, for_proof=True)
+        if bound > 1024 * 1024:
+            yield [record]
+        else:
+            batch.append(record)
+            estimate += bound
+    if batch:
+        yield batch
 
 def _normalized_allocation(record):
     result = {k: v for k, v in record.items() if k not in ('address', 'physical_spans', 'store_allocation_id')}
@@ -151,11 +184,11 @@ def encode(source, destination, progress=None, verify=True, *, compact_pointer_p
             emit('logical_bytes', segment=seg, cluster=cid, completed_bytes=copied, total_bytes=logical_total)
         times['logical_bytes'] = time.monotonic() - mark
         mark = time.monotonic()
-        allocation_reader = NativeAllocationReader(db, fields.types, page_preparer=workers.pages) if workers else NativeAllocationReader(db, fields.types)
+        allocation_reader = NativeAllocationReader(db, fields.types, page_preparer=workers.pages if workers else None, context_encoder=encode_json)
         emit('allocations', allocations=0)
         allocation_count = 0
         allocation_digest = hashlib.sha256()
-        allocation_batch, allocation_batch_bytes = [], 0
+        allocation_batch, allocation_contexts, allocation_batch_bytes = [], [], 0
         for allocation in allocation_reader.iter_allocations():
             prepared_encoding = getattr(allocation_reader, 'current_encoded_record', None)
             if prepared_encoding is None:
@@ -164,18 +197,19 @@ def encode(source, destination, progress=None, verify=True, *, compact_pointer_p
             allocation_digest.update(prepared_encoding)
             record_bytes = len(prepared_encoding) + 256
             if allocation_batch and (len(allocation_batch) >= 256 or allocation_batch_bytes + record_bytes > 1024 * 1024):
-                writer.add_allocations(allocation_batch)
-                allocation_batch, allocation_batch_bytes = [], 0
+                writer._add_allocations(allocation_batch, contexts=allocation_contexts)
+                allocation_batch, allocation_contexts, allocation_batch_bytes = [], [], 0
             if record_bytes > 1024 * 1024:
                 writer.add_allocation(allocation)
             else:
                 allocation_batch.append(allocation)
+                allocation_contexts.append(getattr(allocation_reader, 'current_encoded_context', None))
                 allocation_batch_bytes += record_bytes
             allocation_count += 1
             if allocation_count % 10000 == 0:
                 emit('allocations', allocations=allocation_count, context=allocation_reader.current_context)
         if allocation_batch:
-            writer.add_allocations(allocation_batch)
+            writer._add_allocations(allocation_batch, contexts=allocation_contexts)
         writer.finish_allocations()
         writer.put_document('ingest', 'allocation_statistics', allocation_reader.stats)
         times['allocations'] = time.monotonic() - mark
@@ -259,10 +293,11 @@ def encode(source, destination, progress=None, verify=True, *, compact_pointer_p
                 raise StoreError('New portable store lacks relational integrity proof')
             restored_allocations = hashlib.sha256()
             restored_count = 0
-            for row in stored.connection.execute(stored._allocation_query() + ' ORDER BY a.id'):
-                _feed(restored_allocations, stored._allocation_record(row, for_proof=True))
-                restored_count += 1
-                if restored_count % 50000 == 0:
+            for records in _allocation_proof_batches(stored):
+                _feed_records(restored_allocations, records)
+                previous = restored_count
+                restored_count += len(records)
+                if restored_count // 50000 != previous // 50000:
                     emit('verify_graph', allocations_compared=restored_count, total_allocations=allocation_count)
             if (restored_count, restored_allocations.hexdigest()) != (allocation_count, allocation_digest.hexdigest()):
                 raise StoreError('Portable normalized allocations differ from native source records')
@@ -270,9 +305,9 @@ def encode(source, destination, progress=None, verify=True, *, compact_pointer_p
             for (seg, cid, page), expected in pointer_proofs.items():
                 restored_page = hashlib.sha256()
                 count = 0
-                for row in stored.connection.execute('SELECT * FROM pointers WHERE segment=? AND cluster=? AND logical_offset>=? AND logical_offset<? ORDER BY logical_offset', (seg, cid, page, page + 4096)):
-                    _feed(restored_page, list(row))
-                    count += 1
+                for rows in _row_batches(stored.connection.execute('SELECT * FROM pointers WHERE segment=? AND cluster=? AND logical_offset>=? AND logical_offset<? ORDER BY logical_offset', (seg, cid, page, page + 4096))):
+                    restored_page.update(_framed_rows(rows))
+                    count += len(rows)
                 if dict(count=count, sha256=restored_page.hexdigest()) != expected:
                     raise StoreError('Portable normalized pointer bindings differ from native source targets')
                 restored_pointers += count

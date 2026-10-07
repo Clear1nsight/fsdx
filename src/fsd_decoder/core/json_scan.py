@@ -1,4 +1,4 @@
-"""Optional C++ JSON screening, SQL-row framing and row-size estimation.
+"""Optional C++ JSON screening, SQL-row/record framing and row-size estimation.
 
 No runtime compilation or arbitrary external search path; unavailable helpers
 retain Python handling. Python owns syntax parsing and integrity policy.
@@ -39,6 +39,7 @@ _module, _binary, _loaded_sha256 = _load()
 check = getattr(_module, 'check', None)
 frame_rows = getattr(_module, 'frame_rows', None)
 estimate_row = getattr(_module, 'estimate_row', None)
+frame_records = getattr(_module, 'frame_records', None)
 
 
 def identity() -> dict:

@@ -309,8 +309,10 @@ def _json_default(value):
         return str(value)
     raise TypeError(f'Unsupported metadata value {type(value).__name__}')
 
+_canonical_json_encoder = json.JSONEncoder(default=_json_default, ensure_ascii=False, allow_nan=False, sort_keys=True, separators=(',', ':'))
+
 def encode_json(value):
-    return json.dumps(value, default=_json_default, ensure_ascii=False, allow_nan=False, sort_keys=True, separators=(',', ':')).encode('utf-8')
+    return _canonical_json_encoder.encode(value).encode('utf-8')
 
 def _builtin_json_probe(value, ceiling):
     """Check exact builtins without hooks; bound canonical UTF-8 conservatively.
@@ -629,8 +631,10 @@ class StoreWriter:
         if not isinstance(raw, bytes) or not raw:
             raise StoreError('Chunks must contain nonempty bytes')
         self._bounds(segment, cluster, logical_start, len(raw))
-        overlap = self.connection.execute('SELECT 1 FROM chunks WHERE segment=? AND cluster=? AND logical_start<? AND logical_start+length>? LIMIT 1', (segment, cluster, logical_start + len(raw), logical_start)).fetchone()
-        if overlap:
+        # Positive, disjoint stored intervals make the greatest start below
+        # the new end sufficient, including when chunks arrive out of order.
+        overlap = self.connection.execute('SELECT logical_start,length FROM chunks WHERE segment=? AND cluster=? AND logical_start<? ORDER BY logical_start DESC LIMIT 1', (segment, cluster, logical_start + len(raw))).fetchone()
+        if overlap is not None and overlap[0] + overlap[1] > logical_start:
             raise StoreError('Overlapping logical chunks')
         sha = self._blob(raw)
         self.connection.execute('INSERT INTO chunks VALUES (?,?,?,?,?)', (segment, cluster, logical_start, len(raw), sha))
@@ -644,7 +648,7 @@ class StoreWriter:
             raise StoreError('Zero-length extent')
         self.connection.execute('INSERT INTO extents(segment,cluster,logical_start,physical_start,length,metadata) VALUES (?,?,?,?,?,?)', (seg, cid, start, physical, length, encode_json(record).decode()))
 
-    def _prepare_allocation(self, record):
+    def _prepare_allocation(self, record, *, context_raw=None):
         seg, cid, start = (record['segment'], record['cluster'], record['logical_offset'])
         size = _integer(record['size'], 'size')
         self._bounds(seg, cid, start, size)
@@ -653,10 +657,12 @@ class StoreWriter:
         count = _integer(record.get('count', 1), 'element_count')
         if count == 0:
             raise StoreError('Zero element count')
+        if context_raw is not None and type(context_raw) is not bytes:
+            raise StoreError('Prepared allocation context must be immutable bytes')
         excluded = {'segment', 'cluster', 'logical_offset', 'size', 'native_tag', 'name', 'count', 'vector', 'address', 'physical_spans', 'source_metadata', 'page_offset', 'tag_relative_offset', 'tag_word_index', 'instance_index'}
         return (record, seg, cid, start, size, count,
                 encode_json({k: v for k, v in record.items() if k not in excluded}),
-                encode_json(record.get('source_metadata', {})))
+                encode_json(record.get('source_metadata', {})) if context_raw is None else context_raw)
 
     def _allocation_row(self, prepared):
         record, seg, cid, start, size, count, template_raw, context_raw = prepared
@@ -678,11 +684,17 @@ class StoreWriter:
 
     def add_allocations(self, records: Sequence[dict]) -> None:
         """Bounded capture admission; preserve the single-row ID-returning API."""
+        self._add_allocations(records)
+
+    def _add_allocations(self, records, *, contexts=None):
+        """Capture-only immutable encodings; public calls always encode afresh."""
         if len(records) > 256:
             raise StoreError('Allocation batch exceeds record budget')
+        if contexts is not None and len(contexts) != len(records):
+            raise StoreError('Prepared allocation context count disagrees')
         prepared, size = [], 0
-        for record in records:
-            item = self._prepare_allocation(record)
+        for index, record in enumerate(records):
+            item = self._prepare_allocation(record, context_raw=None if contexts is None else contexts[index])
             size += len(item[-2]) + len(item[-1]) + len(record['name'].encode('utf-8')) + 256
             if size > 8 * 1024 * 1024:
                 raise StoreError('Allocation batch exceeds metadata byte budget')
@@ -1044,8 +1056,17 @@ class Store:
         if digest in self._cache:
             self._cache.move_to_end(digest)
             return self._cache[digest]
-        row = self.connection.execute("SELECT\n            CASE WHEN codec IN ('raw','zlib') THEN codec ELSE NULL END AS codec,\n            CASE WHEN typeof(raw_length)='integer' THEN raw_length ELSE NULL END AS raw_length,\n            length(data) AS stored_length FROM blobs WHERE sha256=?", (digest,)).fetchone()
         policy = self.resource_policy
+        row = self.connection.execute("""SELECT
+            CASE WHEN codec IN ('raw','zlib') THEN codec ELSE NULL END AS codec,
+            CASE WHEN typeof(raw_length)='integer' THEN raw_length ELSE NULL END AS raw_length,
+            length(data) AS stored_length,
+            CASE WHEN codec IN ('raw','zlib') AND typeof(raw_length)='integer'
+                AND raw_length BETWEEN 0 AND ? AND length(data) BETWEEN 0 AND ?
+                AND typeof(data)='blob' AND (codec!='raw' OR length(data)=raw_length)
+                THEN data ELSE NULL END AS admitted_data
+            FROM blobs WHERE sha256=?""", (policy.max_uncompressed_blob_bytes,
+                policy.max_stored_blob_bytes, digest)).fetchone()
         if row is None:
             raise StoreError('Missing blob')
         codec, size, stored = (row['codec'], row['raw_length'], row['stored_length'])
@@ -1057,10 +1078,9 @@ class Store:
             raise StoreError('Stored blob bytes exceed resource policy')
         if codec == 'raw' and stored != size:
             raise StoreError('Blob length integrity failure')
-        payload = self.connection.execute("SELECT data FROM blobs WHERE sha256=? AND codec=? AND raw_length=? AND length(data)=? AND typeof(data)='blob'", (digest, codec, size, stored)).fetchone()
-        if payload is None:
+        packed = row['admitted_data']
+        if packed is None:
             raise StoreError('Blob changed or has invalid storage type')
-        packed = payload[0]
         if row['codec'] == 'raw':
             raw = packed
         elif row['codec'] == 'zlib':
@@ -1324,6 +1344,37 @@ class Store:
         for row in self.connection.execute(sql + ' ORDER BY kind,name', args):
             yield tuple(row)
 
+    def _verify_blobs_documents(self, lower=None, upper=None, cancel=None):
+        """Check each BLOB and document use in an optional ordered digest range."""
+        terms, args = [], []
+        if lower is not None:
+            terms.append('>=?')
+            args.append(lower)
+        if upper is not None:
+            terms.append('<?')
+            args.append(upper)
+        blob_where = ' WHERE ' + ' AND '.join('sha256' + term for term in terms) if terms else ''
+        document_where = ' WHERE ' + ' AND '.join('blob_sha256' + term for term in terms) if terms else ''
+        blobs_checked = documents_checked = 0
+        documents = iter(self.connection.execute(
+            'SELECT blob_sha256,kind,name FROM documents' + document_where + ' ORDER BY blob_sha256,kind,name', args))
+        document = next(documents, None)
+        for row in self.connection.execute('SELECT sha256 FROM blobs' + blob_where + ' ORDER BY sha256', args):
+            if cancel is not None:
+                cancel()
+            raw = self._blob(row[0])
+            blobs_checked += 1
+            while document is not None and document[0] == row[0]:
+                self._document_from_raw(document[1], document[2], raw)
+                documents_checked += 1
+                document = next(documents, None)
+            if document is not None and document[0] < row[0]:
+                raise StoreError('Missing document blob')
+        if document is not None:
+            raise StoreError('Missing document blob')
+        self.check_identity()
+        return dict(blobs=blobs_checked, documents=documents_checked)
+
     def verify(self, *, full: bool = True, workers: int = 1) -> dict:
         if type(full) is not bool:
             raise StoreError('Verification mode must be an explicit boolean')
@@ -1346,21 +1397,11 @@ class Store:
             _validate_address_intervals(self.connection)
             self._cache.clear()
             self._cache_size = 0
-            # Merge streams by digest: every blob is verified, and every
-            # document use receives its own checks while those bytes are live.
-            # No archive-wide payload cache or per-blob full document scan.
-            documents = iter(self.connection.execute(
-                'SELECT blob_sha256,kind,name FROM documents ORDER BY blob_sha256,kind,name'))
-            document = next(documents, None)
-            for row in self.connection.execute('SELECT sha256 FROM blobs ORDER BY sha256'):
-                raw = self._blob(row[0])
-                while document is not None and document[0] == row[0]:
-                    self._document_from_raw(document[1], document[2], raw)
-                    document = next(documents, None)
-                if document is not None and document[0] < row[0]:
-                    raise StoreError('Missing document blob')
-            if document is not None:
-                raise StoreError('Missing document blob')
+            if workers == 1:
+                self._verify_blobs_documents()
+            else:
+                from .verification_workers import blob_document_proofs
+                blob_document_proofs(self, workers)
             if self._indexed:
                 self._verify_document_index()
             for table, expected in self.manifest.get('counts', {}).items():

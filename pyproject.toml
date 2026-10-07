@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "fsd-decoder"
-version = "0.1.45"
+version = "0.1.51"
 description = "Bounded provenance-preserving FracSIS/ObjectStore capture and FSDX inspection"
 readme = {text = "Bounded provenance-preserving FracSIS/ObjectStore capture and FSDX inspection. The root README and academic paper at docs/paper/fsd_recovery_paper.md are included; other documentation, tests and maintenance instructions remain local.", content-type = "text/plain"}
 requires-python = ">=3.12,<3.15"

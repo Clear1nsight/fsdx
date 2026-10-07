@@ -3,6 +3,7 @@
 #include <limits>
 #include <string>
 #include <new>
+#include <memory>
 #include <charconv>
 // Predicate only: syntax parsing, policies, integrity and file access stay Python.
 // No allocation, state retention, input mutation or pointers returned to callers.
@@ -169,7 +170,96 @@ static PyObject* frame_rows(PyObject*, PyObject* rows) {
         return PyBytes_FromStringAndSize(framed.data(), framed.size());
     } catch (const std::bad_alloc&) { return PyErr_NoMemory(); }
 }
+
+// Bounded exact-builtin record frames. Conservative whole-tree admission
+// precedes all native output allocation; unsupported values use Python.
+static bool record_bound(PyObject* v, unsigned depth, std::size_t& size) {
+    if (depth > 64 || size > MAX_ROW_BATCH_BYTES) return false;
+    if (PyDict_CheckExact(v)) {
+        size += 2;
+        Py_ssize_t pos = 0; PyObject *key, *value;
+        while (PyDict_Next(v, &pos, &key, &value)) {
+            if (!PyUnicode_CheckExact(key)) return false;
+            size += 2;
+            if (!record_bound(key, depth+1, size) || !record_bound(value, depth+1, size)) return false;
+        }
+    } else if (PyList_CheckExact(v) || PyTuple_CheckExact(v)) {
+        size += 2;
+        const Py_ssize_t n = PyList_CheckExact(v) ? PyList_Size(v) : PyTuple_Size(v);
+        for (Py_ssize_t i=0; i<n; ++i) {
+            size += 1;
+            PyObject* child = PyList_CheckExact(v) ? PyList_GetItem(v,i) : PyTuple_GetItem(v,i);
+            if (!record_bound(child,depth+1,size)) return false;
+        }
+    } else if (PyUnicode_CheckExact(v)) {
+        const Py_ssize_t n=PyUnicode_GetLength(v);
+        if (n < 0 || static_cast<std::size_t>(n) > (MAX_ROW_BATCH_BYTES-3)/6) return false;
+        size += 6*static_cast<std::size_t>(n)+3;
+    } else if (PyBytes_CheckExact(v)) {
+        const Py_ssize_t n=PyBytes_Size(v);
+        if (n < 0 || static_cast<std::size_t>(n) > (MAX_ROW_BATCH_BYTES-32)/2) return false;
+        size += 2*static_cast<std::size_t>(n)+32;
+    } else if (PyLong_CheckExact(v) || PyBool_Check(v) || v==Py_None) size += 32;
+    else return false; // Float spelling, subclasses and conversion hooks stay Python.
+    return size <= MAX_ROW_BATCH_BYTES;
+}
+static bool record_json(PyObject* v, std::string& out) {
+    if (PyBool_Check(v)) {out += (v==Py_True ? "true" : "false"); return true;}
+    if (PyDict_CheckExact(v)) {
+        std::unique_ptr<PyObject, decltype(&Py_DecRef)> keys(PyDict_Keys(v), Py_DecRef);
+        if (!keys) return false;
+        if (PyList_Sort(keys.get())<0) return false;
+        out += '{'; bool good=true;
+        for (Py_ssize_t i=0; i<PyList_Size(keys.get()); ++i) {
+            if(i) out += ',';
+            PyObject* key=PyList_GetItem(keys.get(),i);
+            PyObject* value=PyDict_GetItemWithError(v,key);
+            if (!value || !scalar_json(key,out)) {good=false; break;}
+            out += ':';
+            if (!record_json(value,out)) {good=false; break;}
+        }
+        if (!good) return false;
+        out += '}'; return true;
+    }
+    if (PyList_CheckExact(v) || PyTuple_CheckExact(v)) {
+        out += '[';
+        const Py_ssize_t n=PyList_CheckExact(v) ? PyList_Size(v) : PyTuple_Size(v);
+        for (Py_ssize_t i=0; i<n; ++i) {
+            if(i) out += ',';
+            PyObject* child=PyList_CheckExact(v) ? PyList_GetItem(v,i) : PyTuple_GetItem(v,i);
+            if (!record_json(child,out)) return false;
+        }
+        out += ']'; return true;
+    }
+    return scalar_json(v,out);
+}
+static PyObject* frame_records(PyObject*, PyObject* records) {
+    if (!PyList_CheckExact(records) || PyList_Size(records)>64) Py_RETURN_NONE;
+    std::size_t bound=0;
+    for (Py_ssize_t i=0; i<PyList_Size(records); ++i) {
+        bound += 8;
+        PyObject* value=PyList_GetItem(records,i);
+        if (!PyDict_CheckExact(value) || !record_bound(value,0,bound)) Py_RETURN_NONE;
+    }
+    try {
+        std::string framed;
+        for (Py_ssize_t i=0; i<PyList_Size(records); ++i) {
+            std::string raw;
+            if(!record_json(PyList_GetItem(records,i),raw)) {
+                if (PyErr_ExceptionMatches(PyExc_UnicodeEncodeError)) PyErr_Clear();
+                else if (PyErr_Occurred()) return nullptr;
+                Py_RETURN_NONE;
+            }
+            const std::uint64_t n=raw.size();
+            for(int shift=56;shift>=0;shift-=8) framed += static_cast<char>((n>>shift)&255);
+            framed += raw;
+        }
+        return PyBytes_FromStringAndSize(framed.data(),framed.size());
+    } catch(const std::bad_alloc&) {return PyErr_NoMemory();}
+}
+
 static PyMethodDef methods[] = {
+    {"frame_records", frame_records, METH_O, "Frame bounded exact-builtin record trees or request Python fallback."},
     {"estimate_row", estimate_row, METH_O, "Estimate bounded SQL row size or request Python fallback."},
     {"check", check, METH_VARARGS, "Validate UTF-8 and screen JSON nesting."},
     {"frame_rows", frame_rows, METH_O, "Frame bounded canonical portable SQL rows or return None."},

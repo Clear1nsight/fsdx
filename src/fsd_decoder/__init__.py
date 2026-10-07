@@ -2,4 +2,4 @@
 
 Native source snapshots and portable FSDX inspection remain distinct operations.
 """
-__version__ = "0.1.45"
+__version__ = "0.1.51"

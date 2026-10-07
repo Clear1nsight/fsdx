@@ -65,3 +65,62 @@ def table_proofs(store: Store, workers: int) -> dict[str, dict]:
     if runtime_identity() != runtime:
         raise StoreError('Verification owner runtime changed')
     return result
+
+
+def _blob_document_proof(path, lower, upper, policy, runtime):
+    from fsd_decoder.core.provenance import runtime_identity
+    from .format import Store, StoreError
+    _check_cancelled()
+    if runtime_identity() != runtime:
+        raise StoreError('Verification worker runtime differs from owner')
+    with Store(path, cache_bytes=0, resource_policy=policy) as store:
+        proof = store._verify_blobs_documents(lower, upper, _check_cancelled)
+    if runtime_identity() != runtime:
+        raise StoreError('Verification worker runtime changed')
+    return proof
+
+
+def blob_document_proofs(store: Store, workers: int) -> None:
+    """Bounded contiguous ranges; payloads stay in read-only spawned workers."""
+    from fsd_decoder.core.provenance import runtime_identity
+    from .format import StoreError
+    # A missing document target can lie outside every selected BLOB range.
+    if store.connection.execute('SELECT 1 FROM documents d LEFT JOIN blobs b '
+            'ON b.sha256=d.blob_sha256 WHERE b.sha256 IS NULL LIMIT 1').fetchone():
+        raise StoreError('Missing document blob')
+    count = store.connection.execute('SELECT count(*) FROM blobs').fetchone()[0]
+    documents = store.connection.execute('SELECT count(*) FROM documents').fetchone()[0]
+    if count < workers:
+        proof = store._verify_blobs_documents()
+        if proof != dict(blobs=count, documents=documents):
+            raise StoreError('Parallel BLOB/document coverage disagrees')
+        return
+    boundaries = [None]
+    for index in range(1, workers):
+        row = store.connection.execute('SELECT ' + store._bounded_metadata('sha256') +
+            ' FROM blobs ORDER BY sha256 LIMIT 1 OFFSET ?', (count * index // workers,)).fetchone()
+        if row is None or row[0] is None:
+            raise StoreError('BLOB digest exceeds resource policy')
+        boundaries.append(row[0])
+    boundaries.append(None)
+    runtime = runtime_identity()
+    context = multiprocessing.get_context('spawn')
+    stop = context.Event()
+    with ProcessPoolExecutor(max_workers=workers, mp_context=context,
+            initializer=_initialize, initargs=(stop,)) as pool:
+        pending = []
+        try:
+            for lower, upper in zip(boundaries, boundaries[1:]):
+                pending.append(pool.submit(_blob_document_proof, str(store.path),
+                    lower, upper, store.resource_policy, runtime))
+            results = [future.result() for future in pending]
+        finally:
+            stop.set()
+            for future in pending:
+                future.cancel()
+    store.check_identity()
+    if runtime_identity() != runtime:
+        raise StoreError('Verification owner runtime changed')
+    if (sum(result['blobs'] for result in results) != count
+            or sum(result['documents'] for result in results) != documents):
+        raise StoreError('Parallel BLOB/document coverage disagrees')

@@ -1,4 +1,4 @@
-"""Build the optional JSON screening, row-framing and size-estimation helper.
+"""Build the optional JSON screening, canonical proof framing and size-estimation helper.
 
 Package metadata lives in pyproject.toml; this file configures the extension.
 """
