@@ -243,7 +243,7 @@ FSD_JSON_BACKEND=python artifacts/cache/venv/bin/fsd-encode ingest/example.fsd \
 └── artifacts/              # Generated outputs, environments, caches and builds
 ```
 
-The [technical paper](docs/paper/fsd_recovery_paper.md) describes the recovery
+The [technical paper](https://clear1nsight.github.io/fsdx/paper/fsd_recovery_paper.html) describes the recovery
 method, development history, architecture decisions and evidence limits.
 The public source includes this README and that paper. Local tests, other
 documents, agent/skill instructions, investigations, original inputs and generated
