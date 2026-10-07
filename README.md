@@ -243,9 +243,22 @@ FSD_JSON_BACKEND=python artifacts/cache/venv/bin/fsd-encode ingest/example.fsd \
 └── artifacts/              # Generated outputs, environments, caches and builds
 ```
 
-The [technical paper](https://clear1nsight.github.io/fsdx/paper/fsd_recovery_paper.html) describes the recovery
-method, development history, architecture decisions and evidence limits.
-The public source includes this README and that paper. Local tests, other
+The [academic paper — rendered HTML](https://clear1nsight.github.io/fsdx/paper/fsd_recovery_paper.html)
+describes the recovery method, development history, architecture decisions and
+evidence limits. For offline reading, open
+[`docs/paper/fsd_recovery_paper.html`](docs/paper/fsd_recovery_paper.html) in a web
+browser. GitHub's repository file view shows HTML source; the rendered link uses
+GitHub Pages.
+
+To publish the reader in [Clear1nsight/fsdx](https://github.com/Clear1nsight/fsdx/),
+upload these maintained files, then open **Settings → Pages**. Select **Deploy
+from a branch**, choose **main** and **/docs**, and save. The hosted link becomes
+available after the Pages deployment completes. `docs/index.html` opens the
+paper from the site root, and `docs/.nojekyll` serves the maintained HTML without
+a Jekyll build. See [GitHub's publishing-source guide](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site).
+
+The public source includes this README, the paper's synchronized Markdown and
+HTML, the Pages entry files, and the curated README screenshots. Local tests, other
 documents, agent/skill instructions, investigations, original inputs and generated
 artifacts are excluded from Git. A source-only checkout does not contain the
 local test suite or private research evidence.
