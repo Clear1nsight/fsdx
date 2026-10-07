@@ -1,0 +1,1 @@
+"""FSD decoder resources layer."""

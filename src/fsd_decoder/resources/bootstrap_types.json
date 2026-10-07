@@ -1,0 +1,3713 @@
+{
+  "descriptors": [
+    {
+      "rd_number": 1,
+      "descriptor_va": "0x113b5f30",
+      "descriptor_flags_hex": "00000000",
+      "alignment_exponent_candidate": 0,
+      "instruction_length": 2,
+      "instruction_hex": "013e",
+      "name": "1 byte char"
+    },
+    {
+      "rd_number": 2,
+      "descriptor_va": "0x113b5f43",
+      "descriptor_flags_hex": "01000000",
+      "alignment_exponent_candidate": 1,
+      "instruction_length": 2,
+      "instruction_hex": "023e",
+      "name": "2 byte short"
+    },
+    {
+      "rd_number": 3,
+      "descriptor_va": "0x113b5f57",
+      "descriptor_flags_hex": "02000000",
+      "alignment_exponent_candidate": 2,
+      "instruction_length": 2,
+      "instruction_hex": "033e",
+      "name": "4 byte int"
+    },
+    {
+      "rd_number": 4,
+      "descriptor_va": "0x113b5f69",
+      "descriptor_flags_hex": "02000000",
+      "alignment_exponent_candidate": 2,
+      "instruction_length": 2,
+      "instruction_hex": "033e",
+      "name": "4 byte long"
+    },
+    {
+      "rd_number": 5,
+      "descriptor_va": "0x113b5f7c",
+      "descriptor_flags_hex": "02000000",
+      "alignment_exponent_candidate": 2,
+      "instruction_length": 2,
+      "instruction_hex": "113e",
+      "name": "float"
+    },
+    {
+      "rd_number": 6,
+      "descriptor_va": "0x113b5f89",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 2,
+      "instruction_hex": "123e",
+      "name": "double"
+    },
+    {
+      "rd_number": 8,
+      "descriptor_va": "0x113b5f97",
+      "descriptor_flags_hex": "02000000",
+      "alignment_exponent_candidate": 2,
+      "instruction_length": 2,
+      "instruction_hex": "173e",
+      "name": "4 byte void*"
+    },
+    {
+      "rd_number": 9,
+      "descriptor_va": "0x113b5fab",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 2,
+      "instruction_hex": "043e",
+      "name": "8 byte long"
+    },
+    {
+      "rd_number": 10,
+      "descriptor_va": "0x113b5fbe",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 2,
+      "instruction_hex": "123e",
+      "name": "8 byte ieeed long double"
+    },
+    {
+      "rd_number": 11,
+      "descriptor_va": "0x113b5fde",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 6,
+      "instruction_hex": "1d0a0101223e",
+      "name": "10 byte x87 long double"
+    },
+    {
+      "rd_number": 12,
+      "descriptor_va": "0x113b6001",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 2,
+      "instruction_hex": "143e",
+      "name": "12 byte x87 long double"
+    },
+    {
+      "rd_number": 13,
+      "descriptor_va": "0x113b6020",
+      "descriptor_flags_hex": "04000000",
+      "alignment_exponent_candidate": 4,
+      "instruction_length": 2,
+      "instruction_hex": "133e",
+      "name": "16 byte x87 long double"
+    },
+    {
+      "rd_number": 14,
+      "descriptor_va": "0x113b603f",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 2,
+      "instruction_hex": "183e",
+      "name": "8 byte void*"
+    },
+    {
+      "rd_number": 15,
+      "descriptor_va": "0x113b6053",
+      "descriptor_flags_hex": "01000000",
+      "alignment_exponent_candidate": 1,
+      "instruction_length": 2,
+      "instruction_hex": "023e",
+      "name": "2 byte wchar_t"
+    },
+    {
+      "rd_number": 16,
+      "descriptor_va": "0x113b6069",
+      "descriptor_flags_hex": "02000000",
+      "alignment_exponent_candidate": 2,
+      "instruction_length": 2,
+      "instruction_hex": "033e",
+      "name": "4 byte wchar_t"
+    },
+    {
+      "rd_number": 17,
+      "descriptor_va": "0x113b607f",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 2,
+      "instruction_hex": "043e",
+      "name": "8 byte long long"
+    },
+    {
+      "rd_number": 18,
+      "descriptor_va": "0x113b6097",
+      "descriptor_flags_hex": "04000000",
+      "alignment_exponent_candidate": 4,
+      "instruction_length": 2,
+      "instruction_hex": "053e",
+      "name": "16 byte long long"
+    },
+    {
+      "rd_number": 19,
+      "descriptor_va": "0x113b60b0",
+      "descriptor_flags_hex": "02000000",
+      "alignment_exponent_candidate": 2,
+      "instruction_length": 2,
+      "instruction_hex": "113e",
+      "name": "4 byte ieees float"
+    },
+    {
+      "rd_number": 20,
+      "descriptor_va": "0x113b60ca",
+      "descriptor_flags_hex": "02000000",
+      "alignment_exponent_candidate": 2,
+      "instruction_length": 2,
+      "instruction_hex": "113e",
+      "name": "4 byte vaxf float"
+    },
+    {
+      "rd_number": 21,
+      "descriptor_va": "0x113b60e3",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 2,
+      "instruction_hex": "123e",
+      "name": "8 byte ieeed double"
+    },
+    {
+      "rd_number": 22,
+      "descriptor_va": "0x113b60fe",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 2,
+      "instruction_hex": "123e",
+      "name": "8 byte vaxd double"
+    },
+    {
+      "rd_number": 23,
+      "descriptor_va": "0x113b6118",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 2,
+      "instruction_hex": "123e",
+      "name": "8 byte vaxg double"
+    },
+    {
+      "rd_number": 24,
+      "descriptor_va": "0x113b6132",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 2,
+      "instruction_hex": "123e",
+      "name": "8 byte vaxd long double"
+    },
+    {
+      "rd_number": 25,
+      "descriptor_va": "0x113b6151",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 2,
+      "instruction_hex": "123e",
+      "name": "8 byte vaxg long double"
+    },
+    {
+      "rd_number": 26,
+      "descriptor_va": "0x113b6170",
+      "descriptor_flags_hex": "04000000",
+      "alignment_exponent_candidate": 4,
+      "instruction_length": 2,
+      "instruction_hex": "133e",
+      "name": "16 byte sparc long double"
+    },
+    {
+      "rd_number": 27,
+      "descriptor_va": "0x113b6191",
+      "descriptor_flags_hex": "04000000",
+      "alignment_exponent_candidate": 4,
+      "instruction_length": 2,
+      "instruction_hex": "133e",
+      "name": "16 byte ibm long double"
+    },
+    {
+      "rd_number": 28,
+      "descriptor_va": "0x113b61b0",
+      "descriptor_flags_hex": "04000000",
+      "alignment_exponent_candidate": 4,
+      "instruction_length": 2,
+      "instruction_hex": "133e",
+      "name": "16 byte alpha long double"
+    },
+    {
+      "rd_number": 29,
+      "descriptor_va": "0x113b61d1",
+      "descriptor_flags_hex": "00000000",
+      "alignment_exponent_candidate": 0,
+      "instruction_length": 2,
+      "instruction_hex": "083e",
+      "name": "_OS_align_1"
+    },
+    {
+      "rd_number": 43,
+      "descriptor_va": "0x113b61e4",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 2,
+      "instruction_hex": "183e",
+      "name": "_Od_string"
+    },
+    {
+      "rd_number": 44,
+      "descriptor_va": "0x113b61f6",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 4,
+      "instruction_hex": "2afd963e",
+      "name": "_Virtual_behavior"
+    },
+    {
+      "rd_number": 45,
+      "descriptor_va": "0x113b6211",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 2,
+      "instruction_hex": "183e",
+      "name": "_Slinked_list_mixin<_Template_formal_arg>"
+    },
+    {
+      "rd_number": 46,
+      "descriptor_va": "0x113b6242",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 2,
+      "instruction_hex": "183e",
+      "name": "_Containing_schema_mixin"
+    },
+    {
+      "rd_number": 47,
+      "descriptor_va": "0x113b6262",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 7,
+      "instruction_hex": "2c002c2c002d3e",
+      "name": "_Template_formal_arg"
+    },
+    {
+      "rd_number": 48,
+      "descriptor_va": "0x113b6283",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 4,
+      "instruction_hex": "2b002b3e",
+      "name": "_Name_mixin"
+    },
+    {
+      "rd_number": 49,
+      "descriptor_va": "0x113b6298",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 5,
+      "instruction_hex": "2c0030183e",
+      "name": "_Scoped_name_mixin"
+    },
+    {
+      "rd_number": 50,
+      "descriptor_va": "0x113b62b5",
+      "descriptor_flags_hex": "02000000",
+      "alignment_exponent_candidate": 2,
+      "instruction_length": 2,
+      "instruction_hex": "033e",
+      "name": "_Source_position_mixin"
+    },
+    {
+      "rd_number": 51,
+      "descriptor_va": "0x113b62d3",
+      "descriptor_flags_hex": "00000000",
+      "alignment_exponent_candidate": 0,
+      "instruction_length": 3,
+      "instruction_hex": "01083e",
+      "name": "_Access_mixin"
+    },
+    {
+      "rd_number": 52,
+      "descriptor_va": "0x113b62e9",
+      "descriptor_flags_hex": "02000000",
+      "alignment_exponent_candidate": 2,
+      "instruction_length": 2,
+      "instruction_hex": "033e",
+      "name": "_Byte_unit"
+    },
+    {
+      "rd_number": 53,
+      "descriptor_va": "0x113b62fb",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 7,
+      "instruction_hex": "2c002c2c00303e",
+      "name": "_Predefined_type_mixin"
+    },
+    {
+      "rd_number": 54,
+      "descriptor_va": "0x113b631e",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 7,
+      "instruction_hex": "2c002c2c002e3e",
+      "name": "_Basic_type"
+    },
+    {
+      "rd_number": 55,
+      "descriptor_va": "0x113b6336",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 7,
+      "instruction_hex": "2c0036030b183e",
+      "name": "_Bindable_type"
+    },
+    {
+      "rd_number": 56,
+      "descriptor_va": "0x113b6351",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 7,
+      "instruction_hex": "2c00372c00353e",
+      "name": "_Integral_type"
+    },
+    {
+      "rd_number": 57,
+      "descriptor_va": "0x113b636c",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 5,
+      "instruction_hex": "2c0036183e",
+      "name": "_Indirect_type"
+    },
+    {
+      "rd_number": 58,
+      "descriptor_va": "0x113b6385",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 8,
+      "instruction_hex": "2c002c2c002e183e",
+      "name": "_Template_mixin"
+    },
+    {
+      "rd_number": 59,
+      "descriptor_va": "0x113b63a2",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 15,
+      "instruction_hex": "2c002c2c00302c00320b2c002e183e",
+      "name": "_Basic_variable"
+    },
+    {
+      "rd_number": 60,
+      "descriptor_va": "0x113b63c6",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 7,
+      "instruction_hex": "2c002c2c002e3e",
+      "name": "_Basic_literal"
+    },
+    {
+      "rd_number": 61,
+      "descriptor_va": "0x113b63e1",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 4,
+      "instruction_hex": "2c002c3e",
+      "name": "_Basic_scope"
+    },
+    {
+      "rd_number": 62,
+      "descriptor_va": "0x113b63f7",
+      "descriptor_flags_hex": "01000000",
+      "alignment_exponent_candidate": 1,
+      "instruction_length": 2,
+      "instruction_hex": "023e",
+      "name": "_Short_set"
+    },
+    {
+      "rd_number": 63,
+      "descriptor_va": "0x113b6409",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 5,
+      "instruction_hex": "2c003a183e",
+      "name": "_Function_literal_template"
+    },
+    {
+      "rd_number": 64,
+      "descriptor_va": "0x113b642e",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 4,
+      "instruction_hex": "2c00383e",
+      "name": "_Unsigned_short_type"
+    },
+    {
+      "rd_number": 65,
+      "descriptor_va": "0x113b644c",
+      "descriptor_flags_hex": "01000000",
+      "alignment_exponent_candidate": 1,
+      "instruction_length": 5,
+      "instruction_hex": "2b003e093e",
+      "name": "_Anonymous_Qualifier_mixin"
+    },
+    {
+      "rd_number": 66,
+      "descriptor_va": "0x113b6471",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 6,
+      "instruction_hex": "2c003718183e",
+      "name": "_Pointer_type"
+    },
+    {
+      "rd_number": 67,
+      "descriptor_va": "0x113b648a",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 2,
+      "instruction_hex": "183e",
+      "name": "_Slinked_list_mixin<_Template_actual_arg>"
+    },
+    {
+      "rd_number": 68,
+      "descriptor_va": "0x113b64bb",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 10,
+      "instruction_hex": "2c002c2c00432c002e3e",
+      "name": "_Template_actual_arg"
+    },
+    {
+      "rd_number": 69,
+      "descriptor_va": "0x113b64df",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 5,
+      "instruction_hex": "2c0044183e",
+      "name": "_Type_template_actual_arg"
+    },
+    {
+      "rd_number": 70,
+      "descriptor_va": "0x113b6503",
+      "descriptor_flags_hex": "02000000",
+      "alignment_exponent_candidate": 2,
+      "instruction_length": 4,
+      "instruction_hex": "0303033e",
+      "name": "_Database_id"
+    },
+    {
+      "rd_number": 71,
+      "descriptor_va": "0x113b6519",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 4,
+      "instruction_hex": "18030b3e",
+      "name": "os_typespec"
+    },
+    {
+      "rd_number": 72,
+      "descriptor_va": "0x113b652e",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 5,
+      "instruction_hex": "2c0044183e",
+      "name": "_Literal_template_actual_arg"
+    },
+    {
+      "rd_number": 73,
+      "descriptor_va": "0x113b6555",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 9,
+      "instruction_hex": "2c00352c0037030b3e",
+      "name": "_Basic_float_type"
+    },
+    {
+      "rd_number": 74,
+      "descriptor_va": "0x113b6575",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 4,
+      "instruction_hex": "2c00493e",
+      "name": "_Long_double_real_type"
+    },
+    {
+      "rd_number": 75,
+      "descriptor_va": "0x113b6595",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 6,
+      "instruction_hex": "180303030b3e",
+      "name": "_pset<char*>"
+    },
+    {
+      "rd_number": 76,
+      "descriptor_va": "0x113b65ad",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 11,
+      "instruction_hex": "2b004b0303030b1818183e",
+      "name": "_OS_strings"
+    },
+    {
+      "rd_number": 77,
+      "descriptor_va": "0x113b65c9",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 6,
+      "instruction_hex": "180303030b3e",
+      "name": "_pset<_OS_file*>"
+    },
+    {
+      "rd_number": 78,
+      "descriptor_va": "0x113b65e5",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 4,
+      "instruction_hex": "2c004d3e",
+      "name": "_pset_with_key_lookup<_OS_file*,char*>"
+    },
+    {
+      "rd_number": 79,
+      "descriptor_va": "0x113b6615",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 2,
+      "instruction_hex": "183e",
+      "name": "_Boot_pointer<_OS_file>"
+    },
+    {
+      "rd_number": 80,
+      "descriptor_va": "0x113b6634",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 2,
+      "instruction_hex": "183e",
+      "name": "_Boot_pointer<void>"
+    },
+    {
+      "rd_number": 81,
+      "descriptor_va": "0x113b664f",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 6,
+      "instruction_hex": "0303030b183e",
+      "name": "_Pextensible_array<_Boot_pointer<_OS_file> >"
+    },
+    {
+      "rd_number": 82,
+      "descriptor_va": "0x113b6687",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 7,
+      "instruction_hex": "2b004e2b00513e",
+      "name": "_OS_files"
+    },
+    {
+      "rd_number": 83,
+      "descriptor_va": "0x113b669d",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 2,
+      "instruction_hex": "183e",
+      "name": "_Boot_pointer<_Integral_type>"
+    },
+    {
+      "rd_number": 84,
+      "descriptor_va": "0x113b66c2",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 2,
+      "instruction_hex": "183e",
+      "name": "_Boot_pointer<_Basic_float_type>"
+    },
+    {
+      "rd_number": 85,
+      "descriptor_va": "0x113b66ea",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 2,
+      "instruction_hex": "183e",
+      "name": "_Boot_pointer<_Fixed_integral_type>"
+    },
+    {
+      "rd_number": 86,
+      "descriptor_va": "0x113b6715",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 2,
+      "instruction_hex": "183e",
+      "name": "_Boot_pointer<_Fixed_real_type>"
+    },
+    {
+      "rd_number": 87,
+      "descriptor_va": "0x113b673c",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 2,
+      "instruction_hex": "183e",
+      "name": "_Boot_pointer<_Basic_type>"
+    },
+    {
+      "rd_number": 88,
+      "descriptor_va": "0x113b675e",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 2,
+      "instruction_hex": "183e",
+      "name": "_Boot_pointer<char>"
+    },
+    {
+      "rd_number": 89,
+      "descriptor_va": "0x113b6779",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 24,
+      "instruction_hex": "1d0c082b00532218030b1d03082b00542218030b18030b3e",
+      "name": "_Predefined_types_mixin"
+    },
+    {
+      "rd_number": 90,
+      "descriptor_va": "0x113b67ae",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 6,
+      "instruction_hex": "180303030b3e",
+      "name": "_pset<_Basic_scope*>"
+    },
+    {
+      "rd_number": 91,
+      "descriptor_va": "0x113b67ce",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 4,
+      "instruction_hex": "2c005a3e",
+      "name": "_pset_with_key_lookup<_Basic_scope*,char const*>"
+    },
+    {
+      "rd_number": 92,
+      "descriptor_va": "0x113b6808",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 4,
+      "instruction_hex": "2b005b3e",
+      "name": "_Scope_table"
+    },
+    {
+      "rd_number": 93,
+      "descriptor_va": "0x113b681e",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 2,
+      "instruction_hex": "183e",
+      "name": "_Target_arch_list"
+    },
+    {
+      "rd_number": 94,
+      "descriptor_va": "0x113b6837",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 2,
+      "instruction_hex": "183e",
+      "name": "_Spare_ptr"
+    },
+    {
+      "rd_number": 95,
+      "descriptor_va": "0x113b6849",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 43,
+      "instruction_hex": "2c002c2c004c2c00522c00592c005d030b2b005c18181d04082b005e221d030403221a04a01fffff030b3e",
+      "name": "_OS_schema"
+    },
+    {
+      "rd_number": 96,
+      "descriptor_va": "0x113b6884",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 6,
+      "instruction_hex": "180303030b3e",
+      "name": "_OST_hash<char*,int>"
+    },
+    {
+      "rd_number": 97,
+      "descriptor_va": "0x113b68a4",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 4,
+      "instruction_hex": "2c00603e",
+      "name": "_Persistent_string_value_hash<int>"
+    },
+    {
+      "rd_number": 98,
+      "descriptor_va": "0x113b68d0",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 16,
+      "instruction_hex": "2c005f030318182b002b030b2b00613e",
+      "name": "_Application_schema"
+    },
+    {
+      "rd_number": 99,
+      "descriptor_va": "0x113b68f9",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 7,
+      "instruction_hex": "2c00362c00353e",
+      "name": "_Type_type"
+    },
+    {
+      "rd_number": 100,
+      "descriptor_va": "0x113b6910",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 2,
+      "instruction_hex": "183e",
+      "name": "_Slinked_list_mixin<_Member_mixin>"
+    },
+    {
+      "rd_number": 101,
+      "descriptor_va": "0x113b693a",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 12,
+      "instruction_hex": "2c002c2c00330d2c0064183e",
+      "name": "_Member_mixin"
+    },
+    {
+      "rd_number": 102,
+      "descriptor_va": "0x113b6959",
+      "descriptor_flags_hex": "00000000",
+      "alignment_exponent_candidate": 0,
+      "instruction_length": 3,
+      "instruction_hex": "01083e",
+      "name": "_Bit_unit"
+    },
+    {
+      "rd_number": 103,
+      "descriptor_va": "0x113b696b",
+      "descriptor_flags_hex": "02000000",
+      "alignment_exponent_candidate": 2,
+      "instruction_length": 8,
+      "instruction_hex": "2c00342c0066093e",
+      "name": "_Univ_unit"
+    },
+    {
+      "rd_number": 104,
+      "descriptor_va": "0x113b6983",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 16,
+      "instruction_hex": "2c00652c003b2b00341a04c00000003e",
+      "name": "_Member_variable"
+    },
+    {
+      "rd_number": 105,
+      "descriptor_va": "0x113b69a9",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 2,
+      "instruction_hex": "183e",
+      "name": "_Slinked_list_mixin<_Friend_mixin>"
+    },
+    {
+      "rd_number": 106,
+      "descriptor_va": "0x113b69d3",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 6,
+      "instruction_hex": "2c0069010e3e",
+      "name": "_Friend_mixin"
+    },
+    {
+      "rd_number": 107,
+      "descriptor_va": "0x113b69ec",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 8,
+      "instruction_hex": "2c006a2c002e183e",
+      "name": "_Friend_class"
+    },
+    {
+      "rd_number": 108,
+      "descriptor_va": "0x113b6a07",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 4,
+      "instruction_hex": "2c00383e",
+      "name": "_Integer_type"
+    },
+    {
+      "rd_number": 109,
+      "descriptor_va": "0x113b6a1e",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 5,
+      "instruction_hex": "1803010a3e",
+      "name": "_Hash_table_entry<char*,int>"
+    },
+    {
+      "rd_number": 110,
+      "descriptor_va": "0x113b6a45",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 20,
+      "instruction_hex": "2c003c2c00320b2c00301818032b003e0108183e",
+      "name": "_Function_literal"
+    },
+    {
+      "rd_number": 111,
+      "descriptor_va": "0x113b6a70",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 7,
+      "instruction_hex": "2c002f2c003b3e",
+      "name": "_Template_value_formal"
+    },
+    {
+      "rd_number": 112,
+      "descriptor_va": "0x113b6a93",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 8,
+      "instruction_hex": "2c003c2c0030183e",
+      "name": "_Pointer_literal"
+    },
+    {
+      "rd_number": 113,
+      "descriptor_va": "0x113b6ab1",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 6,
+      "instruction_hex": "2c003c020d3e",
+      "name": "_Literal<unsigned short,_Unsigned_short_type>"
+    },
+    {
+      "rd_number": 114,
+      "descriptor_va": "0x113b6aea",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 11,
+      "instruction_hex": "2c00392c00312c00320b3e",
+      "name": "_Named_indirect_type"
+    },
+    {
+      "rd_number": 115,
+      "descriptor_va": "0x113b6b0f",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 12,
+      "instruction_hex": "2c00682b00672b00660d183e",
+      "name": "_Field_member_variable"
+    },
+    {
+      "rd_number": 116,
+      "descriptor_va": "0x113b6b37",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 4,
+      "instruction_hex": "2c00383e",
+      "name": "_Signed_long_long_type"
+    },
+    {
+      "rd_number": 117,
+      "descriptor_va": "0x113b6b57",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 4,
+      "instruction_hex": "2c00383e",
+      "name": "_Unsigned_long_long_type"
+    },
+    {
+      "rd_number": 118,
+      "descriptor_va": "0x113b6b79",
+      "descriptor_flags_hex": "02000000",
+      "alignment_exponent_candidate": 2,
+      "instruction_length": 5,
+      "instruction_hex": "0303010a3e",
+      "name": "_Hash_table_entry<int,int>"
+    },
+    {
+      "rd_number": 119,
+      "descriptor_va": "0x113b6b9e",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 7,
+      "instruction_hex": "2c002f2c00723e",
+      "name": "_Template_type_formal"
+    },
+    {
+      "rd_number": 120,
+      "descriptor_va": "0x113b6bc0",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 6,
+      "instruction_hex": "180303030b3e",
+      "name": "_OST_hash<char*,unsigned short>"
+    },
+    {
+      "rd_number": 121,
+      "descriptor_va": "0x113b6beb",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 4,
+      "instruction_hex": "2c00783e",
+      "name": "_Persistent_string_value_hash<unsigned short>"
+    },
+    {
+      "rd_number": 122,
+      "descriptor_va": "0x113b6c22",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 7,
+      "instruction_hex": "2c00352c00363e",
+      "name": "_Void_type_"
+    },
+    {
+      "rd_number": 123,
+      "descriptor_va": "0x113b6c3a",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 2,
+      "instruction_hex": "183e",
+      "name": "_Set_table_entry<char*>"
+    },
+    {
+      "rd_number": 124,
+      "descriptor_va": "0x113b6c59",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 10,
+      "instruction_hex": "2c00362c00410318183e",
+      "name": "_Array_type"
+    },
+    {
+      "rd_number": 125,
+      "descriptor_va": "0x113b6c74",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 12,
+      "instruction_hex": "2c0042181a04ff1fffff0b3e",
+      "name": "_Pointer_to_member_type"
+    },
+    {
+      "rd_number": 126,
+      "descriptor_va": "0x113b6c9d",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 2,
+      "instruction_hex": "183e",
+      "name": "_Slinked_list_mixin<_Base_class>"
+    },
+    {
+      "rd_number": 127,
+      "descriptor_va": "0x113b6cc5",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 29,
+      "instruction_hex": "2c002c2c00330d2c007e2c002e2b00340b18182b00341a04800000003e",
+      "name": "_Base_class"
+    },
+    {
+      "rd_number": 128,
+      "descriptor_va": "0x113b6cf3",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 2,
+      "instruction_hex": "183e",
+      "name": "_Set_table_entry<_OS_file*>"
+    },
+    {
+      "rd_number": 129,
+      "descriptor_va": "0x113b6d16",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 4,
+      "instruction_hex": "2c00493e",
+      "name": "_Float_real_type"
+    },
+    {
+      "rd_number": 130,
+      "descriptor_va": "0x113b6d30",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 7,
+      "instruction_hex": "2c00652c006e3e",
+      "name": "_Member_function"
+    },
+    {
+      "rd_number": 131,
+      "descriptor_va": "0x113b6d4d",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 4,
+      "instruction_hex": "2c00493e",
+      "name": "_Double_real_type"
+    },
+    {
+      "rd_number": 132,
+      "descriptor_va": "0x113b6d68",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 6,
+      "instruction_hex": "2c005f03033e",
+      "name": "_Comp_schema"
+    },
+    {
+      "rd_number": 133,
+      "descriptor_va": "0x113b6d80",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 4,
+      "instruction_hex": "2c00383e",
+      "name": "_Signed_char_type"
+    },
+    {
+      "rd_number": 134,
+      "descriptor_va": "0x113b6d9b",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 8,
+      "instruction_hex": "030202180303183e",
+      "name": "_CLIENT_pathname_pool"
+    },
+    {
+      "rd_number": 135,
+      "descriptor_va": "0x113b6dbe",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 19,
+      "instruction_hex": "0303030318180303180303182b00860303183e",
+      "name": "_CLIENT_database_header"
+    },
+    {
+      "rd_number": 136,
+      "descriptor_va": "0x113b6dee",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 6,
+      "instruction_hex": "180303030b3e",
+      "name": "_OST_hash<int,int>"
+    },
+    {
+      "rd_number": 137,
+      "descriptor_va": "0x113b6e0c",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 4,
+      "instruction_hex": "2c00883e",
+      "name": "_Persistent_hash<int,int>"
+    },
+    {
+      "rd_number": 138,
+      "descriptor_va": "0x113b6e2f",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 6,
+      "instruction_hex": "030b2b00893e",
+      "name": "_Application_validation_cache"
+    },
+    {
+      "rd_number": 139,
+      "descriptor_va": "0x113b6e58",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 6,
+      "instruction_hex": "0303030b183e",
+      "name": "_Pextensible_array<_Boot_pointer<_Basic_type> >"
+    },
+    {
+      "rd_number": 140,
+      "descriptor_va": "0x113b6e93",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 11,
+      "instruction_hex": "020202092b008b2b00793e",
+      "name": "_Type_code_manager"
+    },
+    {
+      "rd_number": 141,
+      "descriptor_va": "0x113b6eb6",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 12,
+      "instruction_hex": "2c005f2c008a2c008c030b3e",
+      "name": "_Database_schema"
+    },
+    {
+      "rd_number": 142,
+      "descriptor_va": "0x113b6ed8",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 8,
+      "instruction_hex": "2c00652c002e183e",
+      "name": "_Member_type"
+    },
+    {
+      "rd_number": 143,
+      "descriptor_va": "0x113b6ef2",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 6,
+      "instruction_hex": "2c003c020d3e",
+      "name": "_Literal<short,_Signed_short_type>"
+    },
+    {
+      "rd_number": 144,
+      "descriptor_va": "0x113b6f20",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 6,
+      "instruction_hex": "2c003c030b3e",
+      "name": "_Literal<unsigned int,_Unsigned_integer_type>"
+    },
+    {
+      "rd_number": 145,
+      "descriptor_va": "0x113b6f59",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 3,
+      "instruction_hex": "18183e",
+      "name": "_Cell<_Class_type>"
+    },
+    {
+      "rd_number": 146,
+      "descriptor_va": "0x113b6f74",
+      "descriptor_flags_hex": "02000000",
+      "alignment_exponent_candidate": 2,
+      "instruction_length": 3,
+      "instruction_hex": "03033e",
+      "name": "os_signed_long_rep"
+    },
+    {
+      "rd_number": 147,
+      "descriptor_va": "0x113b6f8f",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 7,
+      "instruction_hex": "2c003c2b00923e",
+      "name": "_Literal<long,_Signed_long_type>"
+    },
+    {
+      "rd_number": 148,
+      "descriptor_va": "0x113b6fbc",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 4,
+      "instruction_hex": "2c00383e",
+      "name": "_Unsigned_long_type"
+    },
+    {
+      "rd_number": 149,
+      "descriptor_va": "0x113b6fd9",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 4,
+      "instruction_hex": "2c00383e",
+      "name": "_Unsigned_integer_type"
+    },
+    {
+      "rd_number": 150,
+      "descriptor_va": "0x113b6ff9",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 6,
+      "instruction_hex": "0303030b183e",
+      "name": "_Pextensible_array<unsigned int>"
+    },
+    {
+      "rd_number": 151,
+      "descriptor_va": "0x113b7025",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 13,
+      "instruction_hex": "2c00372c00312c00320b18183e",
+      "name": "_Enum_type"
+    },
+    {
+      "rd_number": 152,
+      "descriptor_va": "0x113b7042",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 5,
+      "instruction_hex": "2c006a183e",
+      "name": "_Friend_function"
+    },
+    {
+      "rd_number": 153,
+      "descriptor_va": "0x113b705d",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 4,
+      "instruction_hex": "2c00383e",
+      "name": "_Signed_long_type"
+    },
+    {
+      "rd_number": 154,
+      "descriptor_va": "0x113b7078",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 3,
+      "instruction_hex": "18183e",
+      "name": "_Cell<_Basic_type>"
+    },
+    {
+      "rd_number": 155,
+      "descriptor_va": "0x113b7093",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 8,
+      "instruction_hex": "2c00392c00410b3e",
+      "name": "_Anonymous_indirect_type"
+    },
+    {
+      "rd_number": 156,
+      "descriptor_va": "0x113b70b9",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 17,
+      "instruction_hex": "2c00362c00410b18181a04e00000000b3e",
+      "name": "_Function_type"
+    },
+    {
+      "rd_number": 157,
+      "descriptor_va": "0x113b70de",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 5,
+      "instruction_hex": "2c007f183e",
+      "name": "_Virtual_base"
+    },
+    {
+      "rd_number": 158,
+      "descriptor_va": "0x113b70f6",
+      "descriptor_flags_hex": "02000000",
+      "alignment_exponent_candidate": 2,
+      "instruction_length": 3,
+      "instruction_hex": "03033e",
+      "name": "os_unsigned_long_rep"
+    },
+    {
+      "rd_number": 159,
+      "descriptor_va": "0x113b7113",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 7,
+      "instruction_hex": "2c003c2b009e3e",
+      "name": "_Literal<unsigned long,_Unsigned_long_type>"
+    },
+    {
+      "rd_number": 160,
+      "descriptor_va": "0x113b714b",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 4,
+      "instruction_hex": "2c00423e",
+      "name": "_Pointer_ref_type"
+    },
+    {
+      "rd_number": 161,
+      "descriptor_va": "0x113b7166",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 4,
+      "instruction_hex": "2c00423e",
+      "name": "_Reference_type"
+    },
+    {
+      "rd_number": 162,
+      "descriptor_va": "0x113b717f",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 2,
+      "instruction_hex": "183e",
+      "name": "_Set_table_entry<_Basic_scope*>"
+    },
+    {
+      "rd_number": 163,
+      "descriptor_va": "0x113b71a6",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 2,
+      "instruction_hex": "183e",
+      "name": "_Slinked_list_mixin<_Argument_variable>"
+    },
+    {
+      "rd_number": 164,
+      "descriptor_va": "0x113b71d5",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 7,
+      "instruction_hex": "2c003b2c00a33e",
+      "name": "_Argument_variable"
+    },
+    {
+      "rd_number": 165,
+      "descriptor_va": "0x113b71f4",
+      "descriptor_flags_hex": "02000000",
+      "alignment_exponent_candidate": 2,
+      "instruction_length": 5,
+      "instruction_hex": "0303010a3e",
+      "name": "_Hash_table_entry<unsigned int,unsigned int>"
+    },
+    {
+      "rd_number": 166,
+      "descriptor_va": "0x113b722b",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 6,
+      "instruction_hex": "180303030b3e",
+      "name": "_OST_hash<unsigned int,unsigned int>"
+    },
+    {
+      "rd_number": 167,
+      "descriptor_va": "0x113b725b",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 8,
+      "instruction_hex": "2c0068182b002b3e",
+      "name": "_Relationship_member_variable"
+    },
+    {
+      "rd_number": 168,
+      "descriptor_va": "0x113b7286",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 6,
+      "instruction_hex": "2c003c010e3e",
+      "name": "_Literal<unsigned char,_Unsigned_char_type>"
+    },
+    {
+      "rd_number": 169,
+      "descriptor_va": "0x113b72bd",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 2,
+      "instruction_hex": "183e",
+      "name": "_Slinked_list_mixin<_Enumerator_literal>"
+    },
+    {
+      "rd_number": 170,
+      "descriptor_va": "0x113b72ed",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 14,
+      "instruction_hex": "2c003c2c00302c00a9030b18183e",
+      "name": "_Enumerator_literal"
+    },
+    {
+      "rd_number": 171,
+      "descriptor_va": "0x113b7314",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 10,
+      "instruction_hex": "231d020403222417243e",
+      "name": "_CLIENT_soft_pointer64_value_type"
+    },
+    {
+      "rd_number": 172,
+      "descriptor_va": "0x113b7345",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 5,
+      "instruction_hex": "2e00ab033e",
+      "name": "_CLIENT_soft_pointer_base<64>"
+    },
+    {
+      "rd_number": 173,
+      "descriptor_va": "0x113b736d",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 4,
+      "instruction_hex": "2c00ac3e",
+      "name": "_CLIENT_soft_pointer64<void>"
+    },
+    {
+      "rd_number": 174,
+      "descriptor_va": "0x113b7393",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 4,
+      "instruction_hex": "1836183e",
+      "name": "_CLIENT_persistent_root"
+    },
+    {
+      "rd_number": 175,
+      "descriptor_va": "0x113b73b4",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 4,
+      "instruction_hex": "2c00383e",
+      "name": "_Signed_short_type"
+    },
+    {
+      "rd_number": 176,
+      "descriptor_va": "0x113b73d0",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 5,
+      "instruction_hex": "1802010c3e",
+      "name": "_Hash_table_entry<char*,unsigned short>"
+    },
+    {
+      "rd_number": 177,
+      "descriptor_va": "0x113b7402",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 3,
+      "instruction_hex": "18183e",
+      "name": "_Cell<char>"
+    },
+    {
+      "rd_number": 178,
+      "descriptor_va": "0x113b7416",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 6,
+      "instruction_hex": "2c002e18183e",
+      "name": "_Template_instantiation"
+    },
+    {
+      "rd_number": 179,
+      "descriptor_va": "0x113b7439",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 5,
+      "instruction_hex": "2c003a183e",
+      "name": "_Type_template"
+    },
+    {
+      "rd_number": 180,
+      "descriptor_va": "0x113b7452",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 4,
+      "instruction_hex": "2c00383e",
+      "name": "_Unsigned_char_type"
+    },
+    {
+      "rd_number": 181,
+      "descriptor_va": "0x113b746f",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 6,
+      "instruction_hex": "2c0038030b3e",
+      "name": "_Wchar_type"
+    },
+    {
+      "rd_number": 182,
+      "descriptor_va": "0x113b7486",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 6,
+      "instruction_hex": "2c003c030b3e",
+      "name": "_Literal<int,_Integer_type>"
+    },
+    {
+      "rd_number": 183,
+      "descriptor_va": "0x113b74ad",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 6,
+      "instruction_hex": "2c003c010e3e",
+      "name": "_Literal<signed char,_Signed_char_type>"
+    },
+    {
+      "rd_number": 184,
+      "descriptor_va": "0x113b74e0",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 11,
+      "instruction_hex": "2b002b0303181818030b3e",
+      "name": "_OS_file"
+    },
+    {
+      "rd_number": 185,
+      "descriptor_va": "0x113b74f9",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 38,
+      "instruction_hex": "2c00362c003d2c00312c00320b181818010101012b003418181818181818031a04eaa9f9ff3e",
+      "name": "_Class_type"
+    },
+    {
+      "rd_number": 186,
+      "descriptor_va": "0x113b7530",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 7,
+      "instruction_hex": "2c00b918030b3e",
+      "name": "_Instantiated_class_type"
+    },
+    {
+      "rd_number": 187,
+      "descriptor_va": "0x113b7555",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 6,
+      "instruction_hex": "0303030b183e",
+      "name": "_Pextensible_array<_Boot_pointer<void> >"
+    },
+    {
+      "rd_number": 188,
+      "descriptor_va": "0x113b7589",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 6,
+      "instruction_hex": "0303030b183e",
+      "name": "_Pextensible_array<int>"
+    },
+    {
+      "rd_number": 189,
+      "descriptor_va": "0x113b75ac",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 6,
+      "instruction_hex": "2c003c030b3e",
+      "name": "_Literal<wchar_t,_Wchar_type>"
+    },
+    {
+      "rd_number": 190,
+      "descriptor_va": "0x113b75d5",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 18,
+      "instruction_hex": "2c002c2c002e181818181a04a00000000b3e",
+      "name": "_OS_runtime_info"
+    },
+    {
+      "rd_number": 191,
+      "descriptor_va": "0x113b75fd",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 2,
+      "instruction_hex": "183e",
+      "name": "_Slinked_list_mixin<_OS_map_info>"
+    },
+    {
+      "rd_number": 192,
+      "descriptor_va": "0x113b7626",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 14,
+      "instruction_hex": "2c002c2c00bf2c002e1818030b3e",
+      "name": "_OS_map_info"
+    },
+    {
+      "rd_number": 193,
+      "descriptor_va": "0x113b7646",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 6,
+      "instruction_hex": "2c003c010e3e",
+      "name": "_Literal<char,_Char_type>"
+    },
+    {
+      "rd_number": 194,
+      "descriptor_va": "0x113b766b",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 6,
+      "instruction_hex": "2c0038030b3e",
+      "name": "_Char_type"
+    },
+    {
+      "rd_number": 195,
+      "descriptor_va": "0x113b7681",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 2,
+      "instruction_hex": "183e",
+      "name": "_Slinked_list_mixin<_Class_dope>"
+    },
+    {
+      "rd_number": 196,
+      "descriptor_va": "0x113b76a9",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 13,
+      "instruction_hex": "2c002c2c00c32c002e030b183e",
+      "name": "_Class_dope"
+    },
+    {
+      "rd_number": 197,
+      "descriptor_va": "0x113b76c7",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 6,
+      "instruction_hex": "2c00c403033e",
+      "name": "_Offset_dope"
+    },
+    {
+      "rd_number": 198,
+      "descriptor_va": "0x113b76df",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 4,
+      "instruction_hex": "2c00c53e",
+      "name": "_Virtual_base_table_dope"
+    },
+    {
+      "rd_number": 199,
+      "descriptor_va": "0x113b7701",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 4,
+      "instruction_hex": "2c00c53e",
+      "name": "_Virtual_function_table_dope"
+    },
+    {
+      "rd_number": 200,
+      "descriptor_va": "0x113b7727",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 4,
+      "instruction_hex": "2c00c53e",
+      "name": "_Self_ptr_dope"
+    },
+    {
+      "rd_number": 201,
+      "descriptor_va": "0x113b773f",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 5,
+      "instruction_hex": "2c00c5183e",
+      "name": "_Virtual_base_dope"
+    },
+    {
+      "rd_number": 202,
+      "descriptor_va": "0x113b775c",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 4,
+      "instruction_hex": "2c00c93e",
+      "name": "_Virtual_base_ptr_dope"
+    },
+    {
+      "rd_number": 203,
+      "descriptor_va": "0x113b777c",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 4,
+      "instruction_hex": "2c00c93e",
+      "name": "_Cons_displacement_dope"
+    },
+    {
+      "rd_number": 204,
+      "descriptor_va": "0x113b779d",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 6,
+      "instruction_hex": "18020203183e",
+      "name": "_Rep_desc_persist"
+    },
+    {
+      "rd_number": 205,
+      "descriptor_va": "0x113b77ba",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 9,
+      "instruction_hex": "0101020b181803033e",
+      "name": "_Rep_desc_type_table_persist"
+    },
+    {
+      "rd_number": 206,
+      "descriptor_va": "0x113b77e5",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 2,
+      "instruction_hex": "183e",
+      "name": "_Slinked_list_mixin<_Pragma_info>"
+    },
+    {
+      "rd_number": 207,
+      "descriptor_va": "0x113b780e",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 15,
+      "instruction_hex": "2c00ce2c002e03032b002b030b183e",
+      "name": "_Pragma_info"
+    },
+    {
+      "rd_number": 208,
+      "descriptor_va": "0x113b782f",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 4,
+      "instruction_hex": "2c00383e",
+      "name": "_Bool_type"
+    },
+    {
+      "rd_number": 209,
+      "descriptor_va": "0x113b7843",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 6,
+      "instruction_hex": "2c0038030b3e",
+      "name": "_Fixed_integral_type"
+    },
+    {
+      "rd_number": 210,
+      "descriptor_va": "0x113b7863",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 4,
+      "instruction_hex": "2c00493e",
+      "name": "_Fixed_real_type"
+    },
+    {
+      "rd_number": 211,
+      "descriptor_va": "0x113b787d",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 6,
+      "instruction_hex": "2c003c030b3e",
+      "name": "_Literal<int,_Bool_type>"
+    },
+    {
+      "rd_number": 212,
+      "descriptor_va": "0x113b78a1",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 6,
+      "instruction_hex": "2c003c18183e",
+      "name": "_Literal<void*,_Fixed_integral_type>"
+    },
+    {
+      "rd_number": 213,
+      "descriptor_va": "0x113b78d1",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 11,
+      "instruction_hex": "2c003d2c00312c002e183e",
+      "name": "_OS_namespace"
+    },
+    {
+      "rd_number": 214,
+      "descriptor_va": "0x113b78ef",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 10,
+      "instruction_hex": "2c00c42b002b2b002b3e",
+      "name": "_Annotation_dope"
+    },
+    {
+      "rd_number": 215,
+      "descriptor_va": "0x113b790f",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 8,
+      "instruction_hex": "2c00652c002e183e",
+      "name": "_Member_namespace"
+    },
+    {
+      "rd_number": 216,
+      "descriptor_va": "0x113b792e",
+      "descriptor_flags_hex": "02000000",
+      "alignment_exponent_candidate": 2,
+      "instruction_length": 2,
+      "instruction_hex": "033e",
+      "name": "_CLIENT_soft_pointer_base<32>"
+    },
+    {
+      "rd_number": 217,
+      "descriptor_va": "0x113b7953",
+      "descriptor_flags_hex": "02000000",
+      "alignment_exponent_candidate": 2,
+      "instruction_length": 2,
+      "instruction_hex": "033e",
+      "name": "os_soft_pointer_base<32>"
+    },
+    {
+      "rd_number": 218,
+      "descriptor_va": "0x113b7973",
+      "descriptor_flags_hex": "00000000",
+      "alignment_exponent_candidate": 0,
+      "instruction_length": 6,
+      "instruction_hex": "1d040101223e",
+      "name": "os4u_bytes"
+    },
+    {
+      "rd_number": 219,
+      "descriptor_va": "0x113b7989",
+      "descriptor_flags_hex": "00000000",
+      "alignment_exponent_candidate": 0,
+      "instruction_length": 7,
+      "instruction_hex": "2b00da2b00da3e",
+      "name": "os8u_bytes"
+    },
+    {
+      "rd_number": 220,
+      "descriptor_va": "0x113b79a0",
+      "descriptor_flags_hex": "00000000",
+      "alignment_exponent_candidate": 0,
+      "instruction_length": 4,
+      "instruction_hex": "2c00da3e",
+      "name": "os4u_byte_offset"
+    },
+    {
+      "rd_number": 221,
+      "descriptor_va": "0x113b79ba",
+      "descriptor_flags_hex": "00000000",
+      "alignment_exponent_candidate": 0,
+      "instruction_length": 19,
+      "instruction_hex": "011d030101222b00da2b00db2b00da2b00dc3e",
+      "name": "_SUTL_SEM_header"
+    },
+    {
+      "rd_number": 222,
+      "descriptor_va": "0x113b79e3",
+      "descriptor_flags_hex": "00000000",
+      "alignment_exponent_candidate": 0,
+      "instruction_length": 4,
+      "instruction_hex": "2c00dd3e",
+      "name": "_CLIENT_SEM_header"
+    },
+    {
+      "rd_number": 223,
+      "descriptor_va": "0x113b79ff",
+      "descriptor_flags_hex": "00000000",
+      "alignment_exponent_candidate": 0,
+      "instruction_length": 10,
+      "instruction_hex": "2b00dc2b00da2b00da3e",
+      "name": "_SUTL_SEM_array"
+    },
+    {
+      "rd_number": 224,
+      "descriptor_va": "0x113b7a1e",
+      "descriptor_flags_hex": "00000000",
+      "alignment_exponent_candidate": 0,
+      "instruction_length": 4,
+      "instruction_hex": "2c00df3e",
+      "name": "_SUTL_SEM_offset_array"
+    },
+    {
+      "rd_number": 225,
+      "descriptor_va": "0x113b7a3e",
+      "descriptor_flags_hex": "00000000",
+      "alignment_exponent_candidate": 0,
+      "instruction_length": 10,
+      "instruction_hex": "2b00e02b00da2b00da3e",
+      "name": "_SUTL_SEM"
+    },
+    {
+      "rd_number": 226,
+      "descriptor_va": "0x113b7a57",
+      "descriptor_flags_hex": "00000000",
+      "alignment_exponent_candidate": 0,
+      "instruction_length": 13,
+      "instruction_hex": "2c00e12b00dc2b00da2b00da3e",
+      "name": "_CLIENT_SEM"
+    },
+    {
+      "rd_number": 227,
+      "descriptor_va": "0x113b7a75",
+      "descriptor_flags_hex": "00000000",
+      "alignment_exponent_candidate": 0,
+      "instruction_length": 4,
+      "instruction_hex": "2c00df3e",
+      "name": "_SUTL_SEM_hash_entry_array"
+    },
+    {
+      "rd_number": 228,
+      "descriptor_va": "0x113b7a99",
+      "descriptor_flags_hex": "00000000",
+      "alignment_exponent_candidate": 0,
+      "instruction_length": 13,
+      "instruction_hex": "2b00e32b00da2b00da2b00da3e",
+      "name": "_SUTL_SEM_hash"
+    },
+    {
+      "rd_number": 229,
+      "descriptor_va": "0x113b7aba",
+      "descriptor_flags_hex": "00000000",
+      "alignment_exponent_candidate": 0,
+      "instruction_length": 4,
+      "instruction_hex": "2c00e43e",
+      "name": "_CLIENT_SEM_hash"
+    },
+    {
+      "rd_number": 230,
+      "descriptor_va": "0x113b7ad4",
+      "descriptor_flags_hex": "00000000",
+      "alignment_exponent_candidate": 0,
+      "instruction_length": 4,
+      "instruction_hex": "2c00e03e",
+      "name": "_CLIENT_SEM_hash_index"
+    },
+    {
+      "rd_number": 231,
+      "descriptor_va": "0x113b7af4",
+      "descriptor_flags_hex": "00000000",
+      "alignment_exponent_candidate": 0,
+      "instruction_length": 13,
+      "instruction_hex": "2b00da2b00da2b00da2b00da3e",
+      "name": "_SUTL_SEM_hash_entry"
+    },
+    {
+      "rd_number": 232,
+      "descriptor_va": "0x113b7b1b",
+      "descriptor_flags_hex": "04000000",
+      "alignment_exponent_candidate": 4,
+      "instruction_length": 4,
+      "instruction_hex": "2c00e73e",
+      "name": "_CLIENT_SEM_hash_entry"
+    },
+    {
+      "rd_number": 233,
+      "descriptor_va": "0x113b7b3b",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 4,
+      "instruction_hex": "2afd963e",
+      "name": "_ODI_test_virtual_behavior"
+    },
+    {
+      "rd_number": 234,
+      "descriptor_va": "0x113b7b5f",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 7,
+      "instruction_hex": "2c00e91803033e",
+      "name": "_ODI_test_1"
+    },
+    {
+      "rd_number": 235,
+      "descriptor_va": "0x113b7b77",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 7,
+      "instruction_hex": "2c00e91803033e",
+      "name": "_ODI_test_2"
+    },
+    {
+      "rd_number": 236,
+      "descriptor_va": "0x113b7b8f",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 7,
+      "instruction_hex": "2c00e90303183e",
+      "name": "_ODI_test_3"
+    },
+    {
+      "rd_number": 237,
+      "descriptor_va": "0x113b7ba7",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 7,
+      "instruction_hex": "2c00e90303183e",
+      "name": "_ODI_test_3b"
+    },
+    {
+      "rd_number": 238,
+      "descriptor_va": "0x113b7bc0",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 10,
+      "instruction_hex": "2c00ed2c00ec1803033e",
+      "name": "_ODI_test_4"
+    },
+    {
+      "rd_number": 239,
+      "descriptor_va": "0x113b7bdb",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 16,
+      "instruction_hex": "2c00ea2c00eb2c00ec1803032b00ee3e",
+      "name": "_ODI_test_5"
+    },
+    {
+      "rd_number": 240,
+      "descriptor_va": "0x113b7bfc",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 10,
+      "instruction_hex": "231d020403222417243e",
+      "name": "os_soft_pointer64_value_type"
+    },
+    {
+      "rd_number": 241,
+      "descriptor_va": "0x113b7c28",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 5,
+      "instruction_hex": "2e00f0033e",
+      "name": "os_soft_pointer_base<64>"
+    },
+    {
+      "rd_number": 242,
+      "descriptor_va": "0x113b7c4b",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 5,
+      "instruction_hex": "363635353e",
+      "name": "_ODI_soft_pointer_holder"
+    },
+    {
+      "rd_number": 243,
+      "descriptor_va": "0x113b7c6e",
+      "descriptor_flags_hex": "00000000",
+      "alignment_exponent_candidate": 0,
+      "instruction_length": 16,
+      "instruction_hex": "011d030101222b00da2b00da2b00da3e",
+      "name": "_CLIENT_OSJI_Segment_data"
+    },
+    {
+      "rd_number": 244,
+      "descriptor_va": "0x113b7c9d",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 2,
+      "instruction_hex": "043e",
+      "name": "os_int64"
+    },
+    {
+      "rd_number": 245,
+      "descriptor_va": "0x113b7cad",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 2,
+      "instruction_hex": "043e",
+      "name": "os_unsigned_int64"
+    },
+    {
+      "rd_number": 246,
+      "descriptor_va": "0x113b7cc6",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 2,
+      "instruction_hex": "183e",
+      "name": "_Boot_pointer<_CLIENT_persistent_root>"
+    }
+  ],
+  "source": "o6clien1.dll",
+  "sha256": "638db0e8ad64fe8867bededdcc660942cf57a11d6749a31b34c828505b09ab76",
+  "image_base": "0x11200000",
+  "bootstrap_table_va": "0x113b9070",
+  "tag_map_va": "0x113b87bc",
+  "descriptor_map_va": "0x113b5b58",
+  "last_tag": 167,
+  "last_rd": 246,
+  "entries": [
+    {
+      "tag": 1,
+      "rd_number": 1,
+      "descriptor_va": "0x113b5f30",
+      "descriptor_flags_hex": "00000000",
+      "alignment_exponent_candidate": 0,
+      "instruction_length": 2,
+      "instruction_hex": "013e",
+      "name": "1 byte char",
+      "size": 1,
+      "alignment": 1,
+      "size_evidence": "builtin name and instruction identifier; exact floating labels retained"
+    },
+    {
+      "tag": 2,
+      "rd_number": 2,
+      "descriptor_va": "0x113b5f43",
+      "descriptor_flags_hex": "01000000",
+      "alignment_exponent_candidate": 1,
+      "instruction_length": 2,
+      "instruction_hex": "023e",
+      "name": "2 byte short",
+      "size": 2,
+      "alignment": 2,
+      "size_evidence": "builtin name and instruction identifier; exact floating labels retained"
+    },
+    {
+      "tag": 3,
+      "rd_number": 3,
+      "descriptor_va": "0x113b5f57",
+      "descriptor_flags_hex": "02000000",
+      "alignment_exponent_candidate": 2,
+      "instruction_length": 2,
+      "instruction_hex": "033e",
+      "name": "4 byte int",
+      "size": 4,
+      "alignment": 4,
+      "size_evidence": "builtin name and instruction identifier; exact floating labels retained"
+    },
+    {
+      "tag": 4,
+      "rd_number": 4,
+      "descriptor_va": "0x113b5f69",
+      "descriptor_flags_hex": "02000000",
+      "alignment_exponent_candidate": 2,
+      "instruction_length": 2,
+      "instruction_hex": "033e",
+      "name": "4 byte long",
+      "size": 4,
+      "alignment": 4,
+      "size_evidence": "builtin name and instruction identifier; exact floating labels retained"
+    },
+    {
+      "tag": 5,
+      "rd_number": 5,
+      "descriptor_va": "0x113b5f7c",
+      "descriptor_flags_hex": "02000000",
+      "alignment_exponent_candidate": 2,
+      "instruction_length": 2,
+      "instruction_hex": "113e",
+      "name": "float",
+      "size": 4,
+      "alignment": 4,
+      "size_evidence": "builtin name and instruction identifier; exact floating labels retained"
+    },
+    {
+      "tag": 6,
+      "rd_number": 6,
+      "descriptor_va": "0x113b5f89",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 2,
+      "instruction_hex": "123e",
+      "name": "double",
+      "size": 8,
+      "alignment": 8,
+      "size_evidence": "builtin name and instruction identifier; exact floating labels retained"
+    },
+    {
+      "tag": 8,
+      "rd_number": 8,
+      "descriptor_va": "0x113b5f97",
+      "descriptor_flags_hex": "02000000",
+      "alignment_exponent_candidate": 2,
+      "instruction_length": 2,
+      "instruction_hex": "173e",
+      "name": "4 byte void*",
+      "size": 4,
+      "alignment": 4,
+      "size_evidence": "builtin name and instruction identifier; exact floating labels retained"
+    },
+    {
+      "tag": 9,
+      "rd_number": 9,
+      "descriptor_va": "0x113b5fab",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 2,
+      "instruction_hex": "043e",
+      "name": "8 byte long",
+      "size": 8,
+      "alignment": 8,
+      "size_evidence": "builtin name and instruction identifier; exact floating labels retained"
+    },
+    {
+      "tag": 10,
+      "rd_number": 10,
+      "descriptor_va": "0x113b5fbe",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 2,
+      "instruction_hex": "123e",
+      "name": "8 byte ieeed long double",
+      "size": 8,
+      "alignment": 8,
+      "size_evidence": "builtin name and instruction identifier; exact floating labels retained"
+    },
+    {
+      "tag": 11,
+      "rd_number": 11,
+      "descriptor_va": "0x113b5fde",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 6,
+      "instruction_hex": "1d0a0101223e",
+      "name": "10 byte x87 long double",
+      "size": 10,
+      "alignment": 8,
+      "size_evidence": "builtin name and instruction identifier; exact floating labels retained"
+    },
+    {
+      "tag": 12,
+      "rd_number": 12,
+      "descriptor_va": "0x113b6001",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 2,
+      "instruction_hex": "143e",
+      "name": "12 byte x87 long double",
+      "size": 12,
+      "alignment": 8,
+      "size_evidence": "builtin name and instruction identifier; exact floating labels retained"
+    },
+    {
+      "tag": 13,
+      "rd_number": 13,
+      "descriptor_va": "0x113b6020",
+      "descriptor_flags_hex": "04000000",
+      "alignment_exponent_candidate": 4,
+      "instruction_length": 2,
+      "instruction_hex": "133e",
+      "name": "16 byte x87 long double",
+      "size": 16,
+      "alignment": 16,
+      "size_evidence": "builtin name and instruction identifier; exact floating labels retained"
+    },
+    {
+      "tag": 14,
+      "rd_number": 14,
+      "descriptor_va": "0x113b603f",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 2,
+      "instruction_hex": "183e",
+      "name": "8 byte void*",
+      "size": 8,
+      "alignment": 8,
+      "size_evidence": "builtin name and instruction identifier; exact floating labels retained"
+    },
+    {
+      "tag": 15,
+      "rd_number": 15,
+      "descriptor_va": "0x113b6053",
+      "descriptor_flags_hex": "01000000",
+      "alignment_exponent_candidate": 1,
+      "instruction_length": 2,
+      "instruction_hex": "023e",
+      "name": "2 byte wchar_t",
+      "size": 2,
+      "alignment": 2,
+      "size_evidence": "builtin name and instruction identifier; exact floating labels retained"
+    },
+    {
+      "tag": 16,
+      "rd_number": 16,
+      "descriptor_va": "0x113b6069",
+      "descriptor_flags_hex": "02000000",
+      "alignment_exponent_candidate": 2,
+      "instruction_length": 2,
+      "instruction_hex": "033e",
+      "name": "4 byte wchar_t",
+      "size": 4,
+      "alignment": 4,
+      "size_evidence": "builtin name and instruction identifier; exact floating labels retained"
+    },
+    {
+      "tag": 17,
+      "rd_number": 17,
+      "descriptor_va": "0x113b607f",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 2,
+      "instruction_hex": "043e",
+      "name": "8 byte long long",
+      "size": 8,
+      "alignment": 8,
+      "size_evidence": "builtin name and instruction identifier; exact floating labels retained"
+    },
+    {
+      "tag": 18,
+      "rd_number": 18,
+      "descriptor_va": "0x113b6097",
+      "descriptor_flags_hex": "04000000",
+      "alignment_exponent_candidate": 4,
+      "instruction_length": 2,
+      "instruction_hex": "053e",
+      "name": "16 byte long long",
+      "size": 16,
+      "alignment": 16,
+      "size_evidence": "builtin name and instruction identifier; exact floating labels retained"
+    },
+    {
+      "tag": 19,
+      "rd_number": 19,
+      "descriptor_va": "0x113b60b0",
+      "descriptor_flags_hex": "02000000",
+      "alignment_exponent_candidate": 2,
+      "instruction_length": 2,
+      "instruction_hex": "113e",
+      "name": "4 byte ieees float",
+      "size": 4,
+      "alignment": 4,
+      "size_evidence": "builtin name and instruction identifier; exact floating labels retained"
+    },
+    {
+      "tag": 20,
+      "rd_number": 20,
+      "descriptor_va": "0x113b60ca",
+      "descriptor_flags_hex": "02000000",
+      "alignment_exponent_candidate": 2,
+      "instruction_length": 2,
+      "instruction_hex": "113e",
+      "name": "4 byte vaxf float",
+      "size": 4,
+      "alignment": 4,
+      "size_evidence": "builtin name and instruction identifier; exact floating labels retained"
+    },
+    {
+      "tag": 21,
+      "rd_number": 21,
+      "descriptor_va": "0x113b60e3",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 2,
+      "instruction_hex": "123e",
+      "name": "8 byte ieeed double",
+      "size": 8,
+      "alignment": 8,
+      "size_evidence": "builtin name and instruction identifier; exact floating labels retained"
+    },
+    {
+      "tag": 22,
+      "rd_number": 22,
+      "descriptor_va": "0x113b60fe",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 2,
+      "instruction_hex": "123e",
+      "name": "8 byte vaxd double",
+      "size": 8,
+      "alignment": 8,
+      "size_evidence": "builtin name and instruction identifier; exact floating labels retained"
+    },
+    {
+      "tag": 23,
+      "rd_number": 23,
+      "descriptor_va": "0x113b6118",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 2,
+      "instruction_hex": "123e",
+      "name": "8 byte vaxg double",
+      "size": 8,
+      "alignment": 8,
+      "size_evidence": "builtin name and instruction identifier; exact floating labels retained"
+    },
+    {
+      "tag": 24,
+      "rd_number": 24,
+      "descriptor_va": "0x113b6132",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 2,
+      "instruction_hex": "123e",
+      "name": "8 byte vaxd long double",
+      "size": 8,
+      "alignment": 8,
+      "size_evidence": "builtin name and instruction identifier; exact floating labels retained"
+    },
+    {
+      "tag": 25,
+      "rd_number": 25,
+      "descriptor_va": "0x113b6151",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 2,
+      "instruction_hex": "123e",
+      "name": "8 byte vaxg long double",
+      "size": 8,
+      "alignment": 8,
+      "size_evidence": "builtin name and instruction identifier; exact floating labels retained"
+    },
+    {
+      "tag": 26,
+      "rd_number": 26,
+      "descriptor_va": "0x113b6170",
+      "descriptor_flags_hex": "04000000",
+      "alignment_exponent_candidate": 4,
+      "instruction_length": 2,
+      "instruction_hex": "133e",
+      "name": "16 byte sparc long double",
+      "size": 16,
+      "alignment": 16,
+      "size_evidence": "builtin name and instruction identifier; exact floating labels retained"
+    },
+    {
+      "tag": 27,
+      "rd_number": 27,
+      "descriptor_va": "0x113b6191",
+      "descriptor_flags_hex": "04000000",
+      "alignment_exponent_candidate": 4,
+      "instruction_length": 2,
+      "instruction_hex": "133e",
+      "name": "16 byte ibm long double",
+      "size": 16,
+      "alignment": 16,
+      "size_evidence": "builtin name and instruction identifier; exact floating labels retained"
+    },
+    {
+      "tag": 28,
+      "rd_number": 28,
+      "descriptor_va": "0x113b61b0",
+      "descriptor_flags_hex": "04000000",
+      "alignment_exponent_candidate": 4,
+      "instruction_length": 2,
+      "instruction_hex": "133e",
+      "name": "16 byte alpha long double",
+      "size": 16,
+      "alignment": 16,
+      "size_evidence": "builtin name and instruction identifier; exact floating labels retained"
+    },
+    {
+      "tag": 29,
+      "rd_number": 29,
+      "descriptor_va": "0x113b61d1",
+      "descriptor_flags_hex": "00000000",
+      "alignment_exponent_candidate": 0,
+      "instruction_length": 2,
+      "instruction_hex": "083e",
+      "name": "_OS_align_1"
+    },
+    {
+      "tag": 43,
+      "rd_number": 43,
+      "descriptor_va": "0x113b61e4",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 2,
+      "instruction_hex": "183e",
+      "name": "_Od_string"
+    },
+    {
+      "tag": 44,
+      "rd_number": 63,
+      "descriptor_va": "0x113b6409",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 5,
+      "instruction_hex": "2c003a183e",
+      "name": "_Function_literal_template"
+    },
+    {
+      "tag": 45,
+      "rd_number": 64,
+      "descriptor_va": "0x113b642e",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 4,
+      "instruction_hex": "2c00383e",
+      "name": "_Unsigned_short_type"
+    },
+    {
+      "tag": 46,
+      "rd_number": 66,
+      "descriptor_va": "0x113b6471",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 6,
+      "instruction_hex": "2c003718183e",
+      "name": "_Pointer_type"
+    },
+    {
+      "tag": 47,
+      "rd_number": 69,
+      "descriptor_va": "0x113b64df",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 5,
+      "instruction_hex": "2c0044183e",
+      "name": "_Type_template_actual_arg"
+    },
+    {
+      "tag": 48,
+      "rd_number": 70,
+      "descriptor_va": "0x113b6503",
+      "descriptor_flags_hex": "02000000",
+      "alignment_exponent_candidate": 2,
+      "instruction_length": 4,
+      "instruction_hex": "0303033e",
+      "name": "_Database_id"
+    },
+    {
+      "tag": 49,
+      "rd_number": 71,
+      "descriptor_va": "0x113b6519",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 4,
+      "instruction_hex": "18030b3e",
+      "name": "os_typespec"
+    },
+    {
+      "tag": 50,
+      "rd_number": 72,
+      "descriptor_va": "0x113b652e",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 5,
+      "instruction_hex": "2c0044183e",
+      "name": "_Literal_template_actual_arg"
+    },
+    {
+      "tag": 51,
+      "rd_number": 74,
+      "descriptor_va": "0x113b6575",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 4,
+      "instruction_hex": "2c00493e",
+      "name": "_Long_double_real_type"
+    },
+    {
+      "tag": 52,
+      "rd_number": 79,
+      "descriptor_va": "0x113b6615",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 2,
+      "instruction_hex": "183e",
+      "name": "_Boot_pointer<_OS_file>"
+    },
+    {
+      "tag": 53,
+      "rd_number": 80,
+      "descriptor_va": "0x113b6634",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 2,
+      "instruction_hex": "183e",
+      "name": "_Boot_pointer<void>"
+    },
+    {
+      "tag": 54,
+      "rd_number": 85,
+      "descriptor_va": "0x113b66ea",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 2,
+      "instruction_hex": "183e",
+      "name": "_Boot_pointer<_Fixed_integral_type>"
+    },
+    {
+      "tag": 55,
+      "rd_number": 86,
+      "descriptor_va": "0x113b6715",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 2,
+      "instruction_hex": "183e",
+      "name": "_Boot_pointer<_Fixed_real_type>"
+    },
+    {
+      "tag": 56,
+      "rd_number": 87,
+      "descriptor_va": "0x113b673c",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 2,
+      "instruction_hex": "183e",
+      "name": "_Boot_pointer<_Basic_type>"
+    },
+    {
+      "tag": 57,
+      "rd_number": 88,
+      "descriptor_va": "0x113b675e",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 2,
+      "instruction_hex": "183e",
+      "name": "_Boot_pointer<char>"
+    },
+    {
+      "tag": 58,
+      "rd_number": 97,
+      "descriptor_va": "0x113b68a4",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 4,
+      "instruction_hex": "2c00603e",
+      "name": "_Persistent_string_value_hash<int>"
+    },
+    {
+      "tag": 59,
+      "rd_number": 98,
+      "descriptor_va": "0x113b68d0",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 16,
+      "instruction_hex": "2c005f030318182b002b030b2b00613e",
+      "name": "_Application_schema"
+    },
+    {
+      "tag": 60,
+      "rd_number": 99,
+      "descriptor_va": "0x113b68f9",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 7,
+      "instruction_hex": "2c00362c00353e",
+      "name": "_Type_type"
+    },
+    {
+      "tag": 61,
+      "rd_number": 104,
+      "descriptor_va": "0x113b6983",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 16,
+      "instruction_hex": "2c00652c003b2b00341a04c00000003e",
+      "name": "_Member_variable"
+    },
+    {
+      "tag": 62,
+      "rd_number": 107,
+      "descriptor_va": "0x113b69ec",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 8,
+      "instruction_hex": "2c006a2c002e183e",
+      "name": "_Friend_class"
+    },
+    {
+      "tag": 63,
+      "rd_number": 108,
+      "descriptor_va": "0x113b6a07",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 4,
+      "instruction_hex": "2c00383e",
+      "name": "_Integer_type"
+    },
+    {
+      "tag": 64,
+      "rd_number": 109,
+      "descriptor_va": "0x113b6a1e",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 5,
+      "instruction_hex": "1803010a3e",
+      "name": "_Hash_table_entry<char*,int>"
+    },
+    {
+      "tag": 65,
+      "rd_number": 110,
+      "descriptor_va": "0x113b6a45",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 20,
+      "instruction_hex": "2c003c2c00320b2c00301818032b003e0108183e",
+      "name": "_Function_literal"
+    },
+    {
+      "tag": 66,
+      "rd_number": 111,
+      "descriptor_va": "0x113b6a70",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 7,
+      "instruction_hex": "2c002f2c003b3e",
+      "name": "_Template_value_formal"
+    },
+    {
+      "tag": 67,
+      "rd_number": 112,
+      "descriptor_va": "0x113b6a93",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 8,
+      "instruction_hex": "2c003c2c0030183e",
+      "name": "_Pointer_literal"
+    },
+    {
+      "tag": 68,
+      "rd_number": 113,
+      "descriptor_va": "0x113b6ab1",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 6,
+      "instruction_hex": "2c003c020d3e",
+      "name": "_Literal<unsigned short,_Unsigned_short_type>"
+    },
+    {
+      "tag": 69,
+      "rd_number": 114,
+      "descriptor_va": "0x113b6aea",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 11,
+      "instruction_hex": "2c00392c00312c00320b3e",
+      "name": "_Named_indirect_type"
+    },
+    {
+      "tag": 70,
+      "rd_number": 115,
+      "descriptor_va": "0x113b6b0f",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 12,
+      "instruction_hex": "2c00682b00672b00660d183e",
+      "name": "_Field_member_variable"
+    },
+    {
+      "tag": 71,
+      "rd_number": 116,
+      "descriptor_va": "0x113b6b37",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 4,
+      "instruction_hex": "2c00383e",
+      "name": "_Signed_long_long_type"
+    },
+    {
+      "tag": 72,
+      "rd_number": 117,
+      "descriptor_va": "0x113b6b57",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 4,
+      "instruction_hex": "2c00383e",
+      "name": "_Unsigned_long_long_type"
+    },
+    {
+      "tag": 73,
+      "rd_number": 118,
+      "descriptor_va": "0x113b6b79",
+      "descriptor_flags_hex": "02000000",
+      "alignment_exponent_candidate": 2,
+      "instruction_length": 5,
+      "instruction_hex": "0303010a3e",
+      "name": "_Hash_table_entry<int,int>"
+    },
+    {
+      "tag": 74,
+      "rd_number": 119,
+      "descriptor_va": "0x113b6b9e",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 7,
+      "instruction_hex": "2c002f2c00723e",
+      "name": "_Template_type_formal"
+    },
+    {
+      "tag": 75,
+      "rd_number": 121,
+      "descriptor_va": "0x113b6beb",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 4,
+      "instruction_hex": "2c00783e",
+      "name": "_Persistent_string_value_hash<unsigned short>"
+    },
+    {
+      "tag": 76,
+      "rd_number": 122,
+      "descriptor_va": "0x113b6c22",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 7,
+      "instruction_hex": "2c00352c00363e",
+      "name": "_Void_type_"
+    },
+    {
+      "tag": 77,
+      "rd_number": 123,
+      "descriptor_va": "0x113b6c3a",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 2,
+      "instruction_hex": "183e",
+      "name": "_Set_table_entry<char*>"
+    },
+    {
+      "tag": 78,
+      "rd_number": 124,
+      "descriptor_va": "0x113b6c59",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 10,
+      "instruction_hex": "2c00362c00410318183e",
+      "name": "_Array_type"
+    },
+    {
+      "tag": 79,
+      "rd_number": 125,
+      "descriptor_va": "0x113b6c74",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 12,
+      "instruction_hex": "2c0042181a04ff1fffff0b3e",
+      "name": "_Pointer_to_member_type"
+    },
+    {
+      "tag": 80,
+      "rd_number": 127,
+      "descriptor_va": "0x113b6cc5",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 29,
+      "instruction_hex": "2c002c2c00330d2c007e2c002e2b00340b18182b00341a04800000003e",
+      "name": "_Base_class"
+    },
+    {
+      "tag": 81,
+      "rd_number": 128,
+      "descriptor_va": "0x113b6cf3",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 2,
+      "instruction_hex": "183e",
+      "name": "_Set_table_entry<_OS_file*>"
+    },
+    {
+      "tag": 82,
+      "rd_number": 129,
+      "descriptor_va": "0x113b6d16",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 4,
+      "instruction_hex": "2c00493e",
+      "name": "_Float_real_type"
+    },
+    {
+      "tag": 83,
+      "rd_number": 130,
+      "descriptor_va": "0x113b6d30",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 7,
+      "instruction_hex": "2c00652c006e3e",
+      "name": "_Member_function"
+    },
+    {
+      "tag": 84,
+      "rd_number": 131,
+      "descriptor_va": "0x113b6d4d",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 4,
+      "instruction_hex": "2c00493e",
+      "name": "_Double_real_type"
+    },
+    {
+      "tag": 85,
+      "rd_number": 132,
+      "descriptor_va": "0x113b6d68",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 6,
+      "instruction_hex": "2c005f03033e",
+      "name": "_Comp_schema"
+    },
+    {
+      "tag": 86,
+      "rd_number": 133,
+      "descriptor_va": "0x113b6d80",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 4,
+      "instruction_hex": "2c00383e",
+      "name": "_Signed_char_type"
+    },
+    {
+      "tag": 87,
+      "rd_number": 135,
+      "descriptor_va": "0x113b6dbe",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 19,
+      "instruction_hex": "0303030318180303180303182b00860303183e",
+      "name": "_CLIENT_database_header"
+    },
+    {
+      "tag": 88,
+      "rd_number": 137,
+      "descriptor_va": "0x113b6e0c",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 4,
+      "instruction_hex": "2c00883e",
+      "name": "_Persistent_hash<int,int>"
+    },
+    {
+      "tag": 89,
+      "rd_number": 141,
+      "descriptor_va": "0x113b6eb6",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 12,
+      "instruction_hex": "2c005f2c008a2c008c030b3e",
+      "name": "_Database_schema"
+    },
+    {
+      "tag": 90,
+      "rd_number": 142,
+      "descriptor_va": "0x113b6ed8",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 8,
+      "instruction_hex": "2c00652c002e183e",
+      "name": "_Member_type"
+    },
+    {
+      "tag": 91,
+      "rd_number": 143,
+      "descriptor_va": "0x113b6ef2",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 6,
+      "instruction_hex": "2c003c020d3e",
+      "name": "_Literal<short,_Signed_short_type>"
+    },
+    {
+      "tag": 92,
+      "rd_number": 144,
+      "descriptor_va": "0x113b6f20",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 6,
+      "instruction_hex": "2c003c030b3e",
+      "name": "_Literal<unsigned int,_Unsigned_integer_type>"
+    },
+    {
+      "tag": 93,
+      "rd_number": 145,
+      "descriptor_va": "0x113b6f59",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 3,
+      "instruction_hex": "18183e",
+      "name": "_Cell<_Class_type>"
+    },
+    {
+      "tag": 94,
+      "rd_number": 147,
+      "descriptor_va": "0x113b6f8f",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 7,
+      "instruction_hex": "2c003c2b00923e",
+      "name": "_Literal<long,_Signed_long_type>"
+    },
+    {
+      "tag": 95,
+      "rd_number": 148,
+      "descriptor_va": "0x113b6fbc",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 4,
+      "instruction_hex": "2c00383e",
+      "name": "_Unsigned_long_type"
+    },
+    {
+      "tag": 96,
+      "rd_number": 149,
+      "descriptor_va": "0x113b6fd9",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 4,
+      "instruction_hex": "2c00383e",
+      "name": "_Unsigned_integer_type"
+    },
+    {
+      "tag": 97,
+      "rd_number": 150,
+      "descriptor_va": "0x113b6ff9",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 6,
+      "instruction_hex": "0303030b183e",
+      "name": "_Pextensible_array<unsigned int>"
+    },
+    {
+      "tag": 98,
+      "rd_number": 151,
+      "descriptor_va": "0x113b7025",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 13,
+      "instruction_hex": "2c00372c00312c00320b18183e",
+      "name": "_Enum_type"
+    },
+    {
+      "tag": 99,
+      "rd_number": 152,
+      "descriptor_va": "0x113b7042",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 5,
+      "instruction_hex": "2c006a183e",
+      "name": "_Friend_function"
+    },
+    {
+      "tag": 100,
+      "rd_number": 153,
+      "descriptor_va": "0x113b705d",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 4,
+      "instruction_hex": "2c00383e",
+      "name": "_Signed_long_type"
+    },
+    {
+      "tag": 101,
+      "rd_number": 154,
+      "descriptor_va": "0x113b7078",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 3,
+      "instruction_hex": "18183e",
+      "name": "_Cell<_Basic_type>"
+    },
+    {
+      "tag": 102,
+      "rd_number": 155,
+      "descriptor_va": "0x113b7093",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 8,
+      "instruction_hex": "2c00392c00410b3e",
+      "name": "_Anonymous_indirect_type"
+    },
+    {
+      "tag": 103,
+      "rd_number": 156,
+      "descriptor_va": "0x113b70b9",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 17,
+      "instruction_hex": "2c00362c00410b18181a04e00000000b3e",
+      "name": "_Function_type"
+    },
+    {
+      "tag": 104,
+      "rd_number": 157,
+      "descriptor_va": "0x113b70de",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 5,
+      "instruction_hex": "2c007f183e",
+      "name": "_Virtual_base"
+    },
+    {
+      "tag": 105,
+      "rd_number": 159,
+      "descriptor_va": "0x113b7113",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 7,
+      "instruction_hex": "2c003c2b009e3e",
+      "name": "_Literal<unsigned long,_Unsigned_long_type>"
+    },
+    {
+      "tag": 106,
+      "rd_number": 160,
+      "descriptor_va": "0x113b714b",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 4,
+      "instruction_hex": "2c00423e",
+      "name": "_Pointer_ref_type"
+    },
+    {
+      "tag": 107,
+      "rd_number": 161,
+      "descriptor_va": "0x113b7166",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 4,
+      "instruction_hex": "2c00423e",
+      "name": "_Reference_type"
+    },
+    {
+      "tag": 108,
+      "rd_number": 162,
+      "descriptor_va": "0x113b717f",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 2,
+      "instruction_hex": "183e",
+      "name": "_Set_table_entry<_Basic_scope*>"
+    },
+    {
+      "tag": 109,
+      "rd_number": 164,
+      "descriptor_va": "0x113b71d5",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 7,
+      "instruction_hex": "2c003b2c00a33e",
+      "name": "_Argument_variable"
+    },
+    {
+      "tag": 110,
+      "rd_number": 165,
+      "descriptor_va": "0x113b71f4",
+      "descriptor_flags_hex": "02000000",
+      "alignment_exponent_candidate": 2,
+      "instruction_length": 5,
+      "instruction_hex": "0303010a3e",
+      "name": "_Hash_table_entry<unsigned int,unsigned int>"
+    },
+    {
+      "tag": 111,
+      "rd_number": 166,
+      "descriptor_va": "0x113b722b",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 6,
+      "instruction_hex": "180303030b3e",
+      "name": "_OST_hash<unsigned int,unsigned int>"
+    },
+    {
+      "tag": 112,
+      "rd_number": 167,
+      "descriptor_va": "0x113b725b",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 8,
+      "instruction_hex": "2c0068182b002b3e",
+      "name": "_Relationship_member_variable"
+    },
+    {
+      "tag": 113,
+      "rd_number": 168,
+      "descriptor_va": "0x113b7286",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 6,
+      "instruction_hex": "2c003c010e3e",
+      "name": "_Literal<unsigned char,_Unsigned_char_type>"
+    },
+    {
+      "tag": 114,
+      "rd_number": 170,
+      "descriptor_va": "0x113b72ed",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 14,
+      "instruction_hex": "2c003c2c00302c00a9030b18183e",
+      "name": "_Enumerator_literal"
+    },
+    {
+      "tag": 115,
+      "rd_number": 174,
+      "descriptor_va": "0x113b7393",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 4,
+      "instruction_hex": "1836183e",
+      "name": "_CLIENT_persistent_root"
+    },
+    {
+      "tag": 116,
+      "rd_number": 175,
+      "descriptor_va": "0x113b73b4",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 4,
+      "instruction_hex": "2c00383e",
+      "name": "_Signed_short_type"
+    },
+    {
+      "tag": 117,
+      "rd_number": 176,
+      "descriptor_va": "0x113b73d0",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 5,
+      "instruction_hex": "1802010c3e",
+      "name": "_Hash_table_entry<char*,unsigned short>"
+    },
+    {
+      "tag": 118,
+      "rd_number": 177,
+      "descriptor_va": "0x113b7402",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 3,
+      "instruction_hex": "18183e",
+      "name": "_Cell<char>"
+    },
+    {
+      "tag": 119,
+      "rd_number": 178,
+      "descriptor_va": "0x113b7416",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 6,
+      "instruction_hex": "2c002e18183e",
+      "name": "_Template_instantiation"
+    },
+    {
+      "tag": 120,
+      "rd_number": 179,
+      "descriptor_va": "0x113b7439",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 5,
+      "instruction_hex": "2c003a183e",
+      "name": "_Type_template"
+    },
+    {
+      "tag": 121,
+      "rd_number": 180,
+      "descriptor_va": "0x113b7452",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 4,
+      "instruction_hex": "2c00383e",
+      "name": "_Unsigned_char_type"
+    },
+    {
+      "tag": 122,
+      "rd_number": 181,
+      "descriptor_va": "0x113b746f",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 6,
+      "instruction_hex": "2c0038030b3e",
+      "name": "_Wchar_type"
+    },
+    {
+      "tag": 123,
+      "rd_number": 182,
+      "descriptor_va": "0x113b7486",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 6,
+      "instruction_hex": "2c003c030b3e",
+      "name": "_Literal<int,_Integer_type>"
+    },
+    {
+      "tag": 124,
+      "rd_number": 183,
+      "descriptor_va": "0x113b74ad",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 6,
+      "instruction_hex": "2c003c010e3e",
+      "name": "_Literal<signed char,_Signed_char_type>"
+    },
+    {
+      "tag": 125,
+      "rd_number": 184,
+      "descriptor_va": "0x113b74e0",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 11,
+      "instruction_hex": "2b002b0303181818030b3e",
+      "name": "_OS_file"
+    },
+    {
+      "tag": 126,
+      "rd_number": 185,
+      "descriptor_va": "0x113b74f9",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 38,
+      "instruction_hex": "2c00362c003d2c00312c00320b181818010101012b003418181818181818031a04eaa9f9ff3e",
+      "name": "_Class_type"
+    },
+    {
+      "tag": 127,
+      "rd_number": 186,
+      "descriptor_va": "0x113b7530",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 7,
+      "instruction_hex": "2c00b918030b3e",
+      "name": "_Instantiated_class_type"
+    },
+    {
+      "tag": 128,
+      "rd_number": 187,
+      "descriptor_va": "0x113b7555",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 6,
+      "instruction_hex": "0303030b183e",
+      "name": "_Pextensible_array<_Boot_pointer<void> >"
+    },
+    {
+      "tag": 129,
+      "rd_number": 188,
+      "descriptor_va": "0x113b7589",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 6,
+      "instruction_hex": "0303030b183e",
+      "name": "_Pextensible_array<int>"
+    },
+    {
+      "tag": 130,
+      "rd_number": 189,
+      "descriptor_va": "0x113b75ac",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 6,
+      "instruction_hex": "2c003c030b3e",
+      "name": "_Literal<wchar_t,_Wchar_type>"
+    },
+    {
+      "tag": 131,
+      "rd_number": 190,
+      "descriptor_va": "0x113b75d5",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 18,
+      "instruction_hex": "2c002c2c002e181818181a04a00000000b3e",
+      "name": "_OS_runtime_info"
+    },
+    {
+      "tag": 132,
+      "rd_number": 192,
+      "descriptor_va": "0x113b7626",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 14,
+      "instruction_hex": "2c002c2c00bf2c002e1818030b3e",
+      "name": "_OS_map_info"
+    },
+    {
+      "tag": 133,
+      "rd_number": 193,
+      "descriptor_va": "0x113b7646",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 6,
+      "instruction_hex": "2c003c010e3e",
+      "name": "_Literal<char,_Char_type>"
+    },
+    {
+      "tag": 134,
+      "rd_number": 194,
+      "descriptor_va": "0x113b766b",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 6,
+      "instruction_hex": "2c0038030b3e",
+      "name": "_Char_type"
+    },
+    {
+      "tag": 135,
+      "rd_number": 198,
+      "descriptor_va": "0x113b76df",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 4,
+      "instruction_hex": "2c00c53e",
+      "name": "_Virtual_base_table_dope"
+    },
+    {
+      "tag": 136,
+      "rd_number": 199,
+      "descriptor_va": "0x113b7701",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 4,
+      "instruction_hex": "2c00c53e",
+      "name": "_Virtual_function_table_dope"
+    },
+    {
+      "tag": 137,
+      "rd_number": 200,
+      "descriptor_va": "0x113b7727",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 4,
+      "instruction_hex": "2c00c53e",
+      "name": "_Self_ptr_dope"
+    },
+    {
+      "tag": 138,
+      "rd_number": 202,
+      "descriptor_va": "0x113b775c",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 4,
+      "instruction_hex": "2c00c93e",
+      "name": "_Virtual_base_ptr_dope"
+    },
+    {
+      "tag": 139,
+      "rd_number": 203,
+      "descriptor_va": "0x113b777c",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 4,
+      "instruction_hex": "2c00c93e",
+      "name": "_Cons_displacement_dope"
+    },
+    {
+      "tag": 140,
+      "rd_number": 204,
+      "descriptor_va": "0x113b779d",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 6,
+      "instruction_hex": "18020203183e",
+      "name": "_Rep_desc_persist"
+    },
+    {
+      "tag": 141,
+      "rd_number": 205,
+      "descriptor_va": "0x113b77ba",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 9,
+      "instruction_hex": "0101020b181803033e",
+      "name": "_Rep_desc_type_table_persist"
+    },
+    {
+      "tag": 142,
+      "rd_number": 207,
+      "descriptor_va": "0x113b780e",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 15,
+      "instruction_hex": "2c00ce2c002e03032b002b030b183e",
+      "name": "_Pragma_info"
+    },
+    {
+      "tag": 143,
+      "rd_number": 208,
+      "descriptor_va": "0x113b782f",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 4,
+      "instruction_hex": "2c00383e",
+      "name": "_Bool_type"
+    },
+    {
+      "tag": 144,
+      "rd_number": 209,
+      "descriptor_va": "0x113b7843",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 6,
+      "instruction_hex": "2c0038030b3e",
+      "name": "_Fixed_integral_type"
+    },
+    {
+      "tag": 145,
+      "rd_number": 210,
+      "descriptor_va": "0x113b7863",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 4,
+      "instruction_hex": "2c00493e",
+      "name": "_Fixed_real_type"
+    },
+    {
+      "tag": 146,
+      "rd_number": 211,
+      "descriptor_va": "0x113b787d",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 6,
+      "instruction_hex": "2c003c030b3e",
+      "name": "_Literal<int,_Bool_type>"
+    },
+    {
+      "tag": 147,
+      "rd_number": 212,
+      "descriptor_va": "0x113b78a1",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 6,
+      "instruction_hex": "2c003c18183e",
+      "name": "_Literal<void*,_Fixed_integral_type>"
+    },
+    {
+      "tag": 148,
+      "rd_number": 213,
+      "descriptor_va": "0x113b78d1",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 11,
+      "instruction_hex": "2c003d2c00312c002e183e",
+      "name": "_OS_namespace"
+    },
+    {
+      "tag": 149,
+      "rd_number": 214,
+      "descriptor_va": "0x113b78ef",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 10,
+      "instruction_hex": "2c00c42b002b2b002b3e",
+      "name": "_Annotation_dope"
+    },
+    {
+      "tag": 150,
+      "rd_number": 215,
+      "descriptor_va": "0x113b790f",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 8,
+      "instruction_hex": "2c00652c002e183e",
+      "name": "_Member_namespace"
+    },
+    {
+      "tag": 151,
+      "rd_number": 220,
+      "descriptor_va": "0x113b79a0",
+      "descriptor_flags_hex": "00000000",
+      "alignment_exponent_candidate": 0,
+      "instruction_length": 4,
+      "instruction_hex": "2c00da3e",
+      "name": "os4u_byte_offset"
+    },
+    {
+      "tag": 152,
+      "rd_number": 222,
+      "descriptor_va": "0x113b79e3",
+      "descriptor_flags_hex": "00000000",
+      "alignment_exponent_candidate": 0,
+      "instruction_length": 4,
+      "instruction_hex": "2c00dd3e",
+      "name": "_CLIENT_SEM_header"
+    },
+    {
+      "tag": 153,
+      "rd_number": 226,
+      "descriptor_va": "0x113b7a57",
+      "descriptor_flags_hex": "00000000",
+      "alignment_exponent_candidate": 0,
+      "instruction_length": 13,
+      "instruction_hex": "2c00e12b00dc2b00da2b00da3e",
+      "name": "_CLIENT_SEM"
+    },
+    {
+      "tag": 154,
+      "rd_number": 229,
+      "descriptor_va": "0x113b7aba",
+      "descriptor_flags_hex": "00000000",
+      "alignment_exponent_candidate": 0,
+      "instruction_length": 4,
+      "instruction_hex": "2c00e43e",
+      "name": "_CLIENT_SEM_hash"
+    },
+    {
+      "tag": 155,
+      "rd_number": 230,
+      "descriptor_va": "0x113b7ad4",
+      "descriptor_flags_hex": "00000000",
+      "alignment_exponent_candidate": 0,
+      "instruction_length": 4,
+      "instruction_hex": "2c00e03e",
+      "name": "_CLIENT_SEM_hash_index"
+    },
+    {
+      "tag": 156,
+      "rd_number": 232,
+      "descriptor_va": "0x113b7b1b",
+      "descriptor_flags_hex": "04000000",
+      "alignment_exponent_candidate": 4,
+      "instruction_length": 4,
+      "instruction_hex": "2c00e73e",
+      "name": "_CLIENT_SEM_hash_entry"
+    },
+    {
+      "tag": 157,
+      "rd_number": 234,
+      "descriptor_va": "0x113b7b5f",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 7,
+      "instruction_hex": "2c00e91803033e",
+      "name": "_ODI_test_1"
+    },
+    {
+      "tag": 158,
+      "rd_number": 235,
+      "descriptor_va": "0x113b7b77",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 7,
+      "instruction_hex": "2c00e91803033e",
+      "name": "_ODI_test_2"
+    },
+    {
+      "tag": 159,
+      "rd_number": 236,
+      "descriptor_va": "0x113b7b8f",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 7,
+      "instruction_hex": "2c00e90303183e",
+      "name": "_ODI_test_3"
+    },
+    {
+      "tag": 160,
+      "rd_number": 237,
+      "descriptor_va": "0x113b7ba7",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 7,
+      "instruction_hex": "2c00e90303183e",
+      "name": "_ODI_test_3b"
+    },
+    {
+      "tag": 161,
+      "rd_number": 238,
+      "descriptor_va": "0x113b7bc0",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 10,
+      "instruction_hex": "2c00ed2c00ec1803033e",
+      "name": "_ODI_test_4"
+    },
+    {
+      "tag": 162,
+      "rd_number": 239,
+      "descriptor_va": "0x113b7bdb",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 16,
+      "instruction_hex": "2c00ea2c00eb2c00ec1803032b00ee3e",
+      "name": "_ODI_test_5"
+    },
+    {
+      "tag": 163,
+      "rd_number": 242,
+      "descriptor_va": "0x113b7c4b",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 5,
+      "instruction_hex": "363635353e",
+      "name": "_ODI_soft_pointer_holder"
+    },
+    {
+      "tag": 164,
+      "rd_number": 243,
+      "descriptor_va": "0x113b7c6e",
+      "descriptor_flags_hex": "00000000",
+      "alignment_exponent_candidate": 0,
+      "instruction_length": 16,
+      "instruction_hex": "011d030101222b00da2b00da2b00da3e",
+      "name": "_CLIENT_OSJI_Segment_data"
+    },
+    {
+      "tag": 165,
+      "rd_number": 244,
+      "descriptor_va": "0x113b7c9d",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 2,
+      "instruction_hex": "043e",
+      "name": "os_int64"
+    },
+    {
+      "tag": 166,
+      "rd_number": 245,
+      "descriptor_va": "0x113b7cad",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 2,
+      "instruction_hex": "043e",
+      "name": "os_unsigned_int64"
+    },
+    {
+      "tag": 167,
+      "rd_number": 246,
+      "descriptor_va": "0x113b7cc6",
+      "descriptor_flags_hex": "03000000",
+      "alignment_exponent_candidate": 3,
+      "instruction_length": 2,
+      "instruction_hex": "183e",
+      "name": "_Boot_pointer<_CLIENT_persistent_root>"
+    }
+  ]
+}

@@ -1,0 +1,278 @@
+[
+  {
+    "opcode": 1,
+    "size": 1,
+    "instruction_length": 1,
+    "name": "rd_1byte_ordinal"
+  },
+  {
+    "opcode": 2,
+    "size": 2,
+    "instruction_length": 1,
+    "name": "rd_2byte_ordinal"
+  },
+  {
+    "opcode": 3,
+    "size": 4,
+    "instruction_length": 1,
+    "name": "rd_4byte_ordinal"
+  },
+  {
+    "opcode": 4,
+    "size": 8,
+    "instruction_length": 1,
+    "name": "rd_8byte_ordinal"
+  },
+  {
+    "opcode": 5,
+    "size": 16,
+    "instruction_length": 1,
+    "name": "rd_16byte_ordinal"
+  },
+  {
+    "opcode": 8,
+    "size": 1,
+    "instruction_length": 1,
+    "name": "rd_filler_1byte"
+  },
+  {
+    "opcode": 9,
+    "size": 2,
+    "instruction_length": 1,
+    "name": "rd_filler_2byte"
+  },
+  {
+    "opcode": 10,
+    "size": 3,
+    "instruction_length": 1,
+    "name": "rd_filler_3byte"
+  },
+  {
+    "opcode": 11,
+    "size": 4,
+    "instruction_length": 1,
+    "name": "rd_filler_4byte"
+  },
+  {
+    "opcode": 12,
+    "size": 5,
+    "instruction_length": 1,
+    "name": "rd_filler_5byte"
+  },
+  {
+    "opcode": 13,
+    "size": 6,
+    "instruction_length": 1,
+    "name": "rd_filler_6byte"
+  },
+  {
+    "opcode": 14,
+    "size": 7,
+    "instruction_length": 1,
+    "name": "rd_filler_7byte"
+  },
+  {
+    "opcode": 15,
+    "size": -1,
+    "instruction_length": 3,
+    "name": "rd_filler_bytes"
+  },
+  {
+    "opcode": 17,
+    "size": 4,
+    "instruction_length": 1,
+    "name": "rd_4byte_float"
+  },
+  {
+    "opcode": 18,
+    "size": 8,
+    "instruction_length": 1,
+    "name": "rd_8byte_float"
+  },
+  {
+    "opcode": 20,
+    "size": 12,
+    "instruction_length": 1,
+    "name": "rd_12byte_float"
+  },
+  {
+    "opcode": 19,
+    "size": 16,
+    "instruction_length": 1,
+    "name": "rd_16byte_float"
+  },
+  {
+    "opcode": 23,
+    "size": 4,
+    "instruction_length": 1,
+    "name": "rd_4byte_pointer"
+  },
+  {
+    "opcode": 24,
+    "size": 8,
+    "instruction_length": 1,
+    "name": "rd_8byte_pointer"
+  },
+  {
+    "opcode": 26,
+    "size": -1,
+    "instruction_length": -1,
+    "name": "rd_bitfields"
+  },
+  {
+    "opcode": 29,
+    "size": -1,
+    "instruction_length": 3,
+    "name": "rd_array_1byte"
+  },
+  {
+    "opcode": 30,
+    "size": -1,
+    "instruction_length": 5,
+    "name": "rd_array_2byte"
+  },
+  {
+    "opcode": 31,
+    "size": -1,
+    "instruction_length": 9,
+    "name": "rd_array_4byte"
+  },
+  {
+    "opcode": 34,
+    "size": 0,
+    "instruction_length": 1,
+    "name": "rd_next_array_element"
+  },
+  {
+    "opcode": 35,
+    "size": -1,
+    "instruction_length": 1,
+    "name": "rd_union"
+  },
+  {
+    "opcode": 36,
+    "size": 0,
+    "instruction_length": 1,
+    "name": "rd_end_union_alternative"
+  },
+  {
+    "opcode": 41,
+    "size": 4,
+    "instruction_length": 3,
+    "name": "rd_vtbl_4byte"
+  },
+  {
+    "opcode": 42,
+    "size": 8,
+    "instruction_length": 3,
+    "name": "rd_vtbl_8byte"
+  },
+  {
+    "opcode": 43,
+    "size": -1,
+    "instruction_length": 3,
+    "name": "rd_call_member_class"
+  },
+  {
+    "opcode": 44,
+    "size": -1,
+    "instruction_length": 3,
+    "name": "rd_call_base_class"
+  },
+  {
+    "opcode": 47,
+    "size": 0,
+    "instruction_length": 3,
+    "name": "rd_call_zero_length_base_class"
+  },
+  {
+    "opcode": 45,
+    "size": 0,
+    "instruction_length": 7,
+    "name": "rd_call_virtual_base_class"
+  },
+  {
+    "opcode": 48,
+    "size": 0,
+    "instruction_length": 7,
+    "name": "rd_call_zero_length_virtual_base_class"
+  },
+  {
+    "opcode": 46,
+    "size": -1,
+    "instruction_length": 4,
+    "name": "rd_call_union_member_class"
+  },
+  {
+    "opcode": 51,
+    "size": -1,
+    "instruction_length": 3,
+    "name": "rd_ptr_to_member"
+  },
+  {
+    "opcode": 50,
+    "size": -1,
+    "instruction_length": 2,
+    "name": "rd_ptr_to_member_function"
+  },
+  {
+    "opcode": 52,
+    "size": -1,
+    "instruction_length": 5,
+    "name": "rd_virtual_filler"
+  },
+  {
+    "opcode": 53,
+    "size": 4,
+    "instruction_length": 1,
+    "name": "rd_4byte_soft_pointer"
+  },
+  {
+    "opcode": 54,
+    "size": 8,
+    "instruction_length": 1,
+    "name": "rd_8byte_soft_pointer"
+  },
+  {
+    "opcode": 55,
+    "size": 4,
+    "instruction_length": 5,
+    "name": "rd_vbcp"
+  },
+  {
+    "opcode": 56,
+    "size": 4,
+    "instruction_length": 3,
+    "name": "rd_selfp"
+  },
+  {
+    "opcode": 57,
+    "size": 4,
+    "instruction_length": 3,
+    "name": "rd_vbctblp_4byte"
+  },
+  {
+    "opcode": 58,
+    "size": 8,
+    "instruction_length": 3,
+    "name": "rd_vbctblp_8byte"
+  },
+  {
+    "opcode": 59,
+    "size": 4,
+    "instruction_length": 3,
+    "name": "rd_consdisp"
+  },
+  {
+    "opcode": 60,
+    "size": 0,
+    "instruction_length": -1,
+    "name": "rd_extended_info"
+  },
+  {
+    "opcode": 62,
+    "size": 0,
+    "instruction_length": 1,
+    "name": "rd_end_type"
+  }
+]
